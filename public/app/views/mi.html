@@ -1,0 +1,12 @@
+
+
+<div>
+	 <select placeholder= "Select Installation" name="mySelect" id="mySelect"
+      ng-options="option.name for option in data.availableOptions track by option.id"
+      ng-model="data.selectedOption"></select>
+
+<button ng-click="myFunc(data.selectedOption)">OK</button>
+</div>
+
+
+

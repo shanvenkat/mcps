@@ -1,0 +1,20 @@
+<div>
+    <div class="well well-sm" ng-show="employeecount == 0">
+            <h5>No Employee data found </h5>
+        </div>
+     <div> Total Employees: {{employeecount}}</div>    
+    <br />
+        <div >
+            <div class="row cardContainer">
+                <div class="span3 card" ng-repeat="person in persons | orderBy:'id'">
+                    <a href="#/person/{{person.id}}" >Person Details</a><br/>                  
+                    <a href="#/personupdate/{{person.id}}" >Update Person</a><br/>
+                    <a href="#/persondelete/{{person.id}}" >Delete Person</a><br/>
+                    <div class="cardHeader">{{person.FirstName + ' ' + person.LastName}}</div>
+                    <div class="cardBody">{{person.Age}}</div> 
+                   </div>
+            </div>
+        </div>
+     
+    <a href="#/personsearch" class="btn btn-primary">Search Person</a><br/>
+  </div>
