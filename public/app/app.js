@@ -36,13 +36,22 @@ var myapp = angular.module('myapp', ['ngRoute',
         ]
             return arravailableOptions;
     }); 
-        
+    
+//Fort Belvoir    auto    Belvoir auto 
+//Fort Bragg  dental  Bragg dental 
+//Fort Campbell   auto    Campbell auto 
+//Fort Campbell   dental  Campbell dental
+//No Installation ALL Belvoir auto, Bragg Dental, Campbell auto, Campbell dental
+//No Installation auto    Belvoir auto , Campbell Auto
+//No Installation dental  Bragg dental , Campell dental
+
+    
     myapp.factory("CardDataModel", function(){
             var arravailableOptions= [
-            {installation: 'Fort Belvoir',  programs:'auto', contact:'Belvoir auto' },
-            {installation: 'Fort Bragg',  programs:'dental', contact:'Brag dental'},
-            {installation: 'Fort Campbell',  programs:'auto', contact:'Campbell auto'},
-            {installation: 'Fort Campbell',  programs:'dental', contact:'Campbell dental'}
+            {installation: 'Fort Belvoir',  programs:'Auto', contact:'Belvoir Auto' },
+            {installation: 'Fort Bragg',  programs:'Dental', contact:'Bragg Dental'},
+            {installation: 'Fort Campbell',  programs:'Auto', contact:'Campbell Auto'},
+            {installation: 'Fort Campbell',  programs:'Dental', contact:'Campbell Dental'}
     
         ]
             return arravailableOptions;

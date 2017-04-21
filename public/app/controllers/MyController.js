@@ -74,12 +74,21 @@ myapp.controller('typeController',  ['$scope', '$location', '$window',  'BasesMo
     'ProgramsModel', 'CardDataModel', '$resource',  
     function ($scope, $location, $window ,BasesModel, StateModel, ProgramsModel, CardDataModel, $resource) {
     
-    http://www.militaryinstallations.dod.mil/MOS/f?p=132:CONTENT:::NO::P4_INST_ID,P4_CONTENT_DIRECTORY,P4_ZIP,P4_DST,P4_TAB:' + getIDfromInstype(selIns, BasesModel) + "," + getIDfromPrograms(selPrg, ProgramsModel) +',,10,IC'
+    $scope.init = function () {
+    // check if there is query in url
+    // and fire search in case its value is not empty
+    //alert ($scope.ins.selected);
+     //$scope.displaynow =  $scope.ins.selected;
+    };
+
+    //http://www.militaryinstallations.dod.mil/MOS/f?p=132:CONTENT:::NO::P4_INST_ID,P4_CONTENT_DIRECTORY,P4_ZIP,P4_DST,P4_TAB:' + getIDfromInstype(selIns, BasesModel) + "," + getIDfromPrograms(selPrg, ProgramsModel) +',,10,IC'
 
     $scope.example9model = []; 
+    //$scope.ins.selected = []; 
+    
     $scope.instypeModel = [];
     $scope.stringData = [ 
-    "auto", "dental"
+    "ALL", "Auto", "Dental"
     ]; 
 
     $scope.instypeData = [ 
@@ -276,27 +285,91 @@ myapp.controller('typeController',  ['$scope', '$location', '$window',  'BasesMo
             }
         
       }
+      
+    $scope.multipleVlaue = $scope.example9model;
+    //$scope.singleInsVlaue = $scope.ins.selected;
+    //alert ($scope.ins.selected);
 
-    $scope.prgInsSingleSelect = function (InsData, prgData){
-        var arrcollectContact = [];
+    function samefromclose(InsData, prgData){
         
-        for (items in CardDataModel){
-            if (CardDataModel[items]. installation == InsData){
-                 for (prgsitems in  prgData){
-                        if (CardDataModel[items].programs ==  prgData[prgsitems]){
-                            //alert (CardDataModel[items].contact)
-                            arrcollectContact.push(CardDataModel[items].contact)
-                        }
-                                
+        var arrcollectContact = [];
+        if (typeof(InsData) != 'undefined'){
+            for (items in CardDataModel){
+                if (CardDataModel[items]. installation == InsData){
+                    for (prgsitems in  prgData){
+                            if (CardDataModel[items].programs ==  prgData[prgsitems]){
+                                arrcollectContact.push(CardDataModel[items].contact)
+                            }
+                        }           
                     }
-           }
+            }
+        }
+                
+        if (typeof(InsData) == 'undefined' || (InsData === '')) {
+            
+            for (prgsitems in  prgData){
+                if (prgData[prgsitems] == 'ALL'){
+                   arrcollectContact = ['Belvoir Auto', 'Bragg Dental', 'Campbell Auto', 'Campbell Dental']
+                }
+                else if (prgData[prgsitems] == 'Auto'){
+                   arrcollectContact = ['Belvoir Auto' , 'Campbell Auto']
+                }
+                else if (prgData[prgsitems] == 'Dental'){
+                   arrcollectContact = ['Bragg Dental' , 'Campell Dental']
+                }
+           } 
         }
         $scope.setContacts = arrcollectContact;
+        
+    }
+    
+    $scope.prgInsSingleSelect = function baba(InsData, prgData){
+        var arrcollectContact = [];
+        if (typeof(InsData) != 'undefined'){
+            for (items in CardDataModel){
+                if (CardDataModel[items]. installation == InsData){
+                    for (prgsitems in  prgData){
+                            if (CardDataModel[items].programs ==  prgData[prgsitems]){
+                                arrcollectContact.push(CardDataModel[items].contact)
+                            }
+                        }           
+                    }
+            }
+        }
+        if (typeof(InsData) == 'undefined' || (InsData === '')) {
+            for (prgsitems in  prgData){
+                if (prgData[prgsitems] == 'ALL'){
+                   arrcollectContact = ['Belvoir Auto', 'Bragg Dental', 'Campbell Auto', 'Campbell Dental']
+                }
+                else if (prgData[prgsitems] == 'Auto'){
+                   arrcollectContact = ['Belvoir Auto' , 'Campbell Auto']
+                }
+                else if (prgData[prgsitems] == 'Dental'){
+                   arrcollectContact = ['Bragg Dental' , 'Campell Dental']
+                }
+           } 
+        }
+        $scope.setContacts = arrcollectContact;
+        
     }
 
     $scope.toggleValue2 = function (){
         alert ('hello');
-    }    
+    }
+
+     $scope.remove = function(item, insd, prgd) { 
+        var index = $scope.multipleVlaue.indexOf(item);
+         //console.log($scope.multipleVlaue);
+         $scope.multipleVlaue.splice(index, 1);  
+         samefromclose(insd,prgd );
+    };
+
+    $scope.removeIns = function(insdo, prgdo) { 
+         $scope.ins.selected = ''; 
+         insdo = '';
+         samefromclose(insdo,prgdo);
+    };
+
 }]);
 
 

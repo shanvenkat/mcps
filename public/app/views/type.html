@@ -1,10 +1,4 @@
 
-<script>
-	
-
-
-</script>
-
 
 <div ng-app="myapp">
 	
@@ -35,39 +29,35 @@
 </table>-->
 
 
-<div ng-app="myapp">
+<div ng-app="myapp" >
 	<div class="container-fluid" >
 		
 		<div class="form-group" ng-show="data.singleSelect=='A Military Installation'" >
  			<input type="text"  placeholder='Enter a Installation' ng-model="base.selected" uib-typeahead="base for base in mibases | filter:$viewValue | limitTo:8" class="form-control"  ></br>
-			<button class="btn btn-success" ng-click="misubmission(base.selected)" type="submit">Go</button>
+			<button class="btn btn-success" ng-click="misubmission(base.selected)" type="submit">Done</button>
 		</div>
 
 		<div class="form-group" ng-show="data.singleSelect=='State resources'">
  			<input type="text"  placeholder='Enter a State' ng-model="state.selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" ></br>
-			<button class="btn btn-success"  ng-click="statesubmission(state.selected)" type="submit">Go</button>
+			<button class="btn btn-success"  ng-click="statesubmission(state.selected)" type="submit">Done</button>
 		</div>
 
 		<div class="form-group" ng-show="data.singleSelect=='Program or service'">
 			
-			<select name="zipInsSelect"  ng-model="data.zipInsSelect">
-      		<option value="">---Filter by Installation or Zipcode---</option> <!-- not selected / blank option -->
-      		<option value="Installation">Installation</option>
-      		<!--<option value="Zipcode">Zipcode</option>-->
-      		</select><br><br>
-			
-	      	<div class="form-group" ng-show="data.zipInsSelect=='Installation'" >
-	      		<!--<input type="text" placeholder='Enter a Installation'
-				ng-model="prg.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" ><br>
-				<button class="btn btn-success" ng-click="prgsubmission(data.programsSelect, prg.selected)" type="submit">Go</button>-->
-					<table>
-						<tr>
-						<td>
-							<input type="text" placeholder='Enter a Installation'
-							ng-model="ins.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" >
-						</td>
-						<td>
-							<div ng-dropdown-multiselect="" options="stringData" selected-model="example9model" extra-settings="example9settings"></div>
+			<table><tr><td>
+				<select name="zipInsSelect"  ng-model="data.zipInsSelect">
+      			<option value="">---Filter by Installation or Zipcode---</option> <!-- not selected / blank option -->
+      			<option value="Installation">Installation</option>
+      			<!--<option value="Zipcode">Zipcode</option>-->
+      			</select>	
+
+			</td>
+			<td>
+				<input type="text" ng-show="data.zipInsSelect=='Installation'" placeholder='Enter a Installation'
+				ng-model="ins.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" >
+			</td>
+			<td>
+				<div ng-dropdown-multiselect=""  options="stringData" ng-show="data.zipInsSelect=='Installation'" selected-model="example9model" extra-settings="example9settings"></div>
 	    				<!--<td><div ng-dropdown-multiselect="" options="instypeData" selected-model="instypeModel" extra-settings="instypeSettings"></div>-->
 	    					<!--<select name="prgSelect"  ng-model="data.prgSelect">
       							<option value="">Select program or service</option>
@@ -75,23 +65,44 @@
       							<option value="Chapel">Chapel</option>
       							<option value="Dentist">Dentist</option>
       						</select><br><br>-->
-	    				</td>
-	    				</tr>
-	    			</table>
+	    	</td>
+			</tr>
+			</table>
 
-	    			<button class="btn btn-success" ng-click="prgInsSingleSelect(ins.selected, example9model)" type="submit">Go</button><br><br>
-	    			
-	    			<table>
-						<tr ng-repeat="x in setContacts" >
-	    				<td>
-	    					<p>{{x}}</p>
-	    						
+			<!--<div class="myInsTag"  ng-if="ins.selected" ng-model="ins.selected" > 
+                    <span > {{ins.selected}} </span>
+                     <a href=""  id="" ng-click="removeIns(ins.selected, example9model)" >x</a> 
+            </div>
+
+			<div class="myTag" id="close{{$index}}" ng-repeat="c in multipleVlaue track by $index" > 
+                     <span id="close{{$index}}"> {{c}} </span>
+                     <a href="" class="close{{$index}}" id="close{{$index}}" ng-click="remove(c, ins.selected, example9model)" >x</a> 
+            </div>-->
+			
+	      	<div   class="mi-left-col">
+	      		<!--<input type="text" placeholder='Enter a Installation'
+				ng-model="prg.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" ><br>
+				<button class="btn btn-success" ng-click="prgsubmission(data.programsSelect, prg.selected)" type="submit">Go</button>-->
+						<button class="btn btn-success" ng-show="data.zipInsSelect=='Installation'"  ng-click="prgInsSingleSelect(ins.selected, example9model)" type="submit">Done</button><br><br>
+						<!--<table>
+						<tr ng-repeat="contact in setContacts">
+	    				<td >	
+	    					<p>{{contact}} <br></p>
 	    				</td>
 						</tr>
-					</table>
-				
-			</div>
-		
+						</table>-->	
+
+					<div class="gridListdemoBasicUsage" >
+						 <md-content class="md-padding" layout-xs="column" layout="row">
+			    		 	<md-card style="width: 300px;" ng-repeat="contact in setContacts">
+			          	 		<md-card-content>
+			            		<h2>{{contact}}</h2>
+			          			</md-card-content>
+			       			</md-card>
+			      		</md-content>
+			    	</div>
+	    	</div>
+
 			<div class="form-group" ng-show="data.zipInsSelect=='Zipcode'" >
 				<input type='text' placeholder='Enter a Zipcode' ng-disabled='prg.selected' ng-model="data.programsZipcode">
 		 	   	<select ng-model='selectMiles' ng-disabled='prg.selected'>
@@ -103,8 +114,7 @@
 	  			<option id = '250'>250 miles</option>
 	  			<option id = '500'>500 miles</option>
 				</select>
-				
-
+			
 				<button class="btn btn-success" ng-click="prgsubmission(data.programsSelect, data.programsZipcode,selectMiles)" type="submit">Go</button>
 			</div>
  		</div>
