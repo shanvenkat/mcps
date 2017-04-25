@@ -43,21 +43,31 @@
 		</div>
 
 		<div class="form-group" ng-show="data.singleSelect=='Program or service'">
-			
 			<table><tr><td>
 				<select name="zipInsSelect"  ng-model="data.zipInsSelect">
-      			<option value="">---Filter by Installation or Zipcode---</option> <!-- not selected / blank option -->
-      			<option value="Installation">Installation</option>
-      			<!--<option value="Zipcode">Zipcode</option>-->
+      				<option value="">---Filter by Installation or Zipcode---</option> <!-- not selected / blank option -->
+      				<option value="Installation">Installation</option>
+      				<option value="Zipcode">Zipcode</option>
       			</select>	
-
 			</td>
 			<td>
 				<input type="text" ng-show="data.zipInsSelect=='Installation'" placeholder='Enter a Installation'
 				ng-model="ins.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" >
+				<input type='text' placeholder='Enter a Zipcode'  ng-show="data.zipInsSelect=='Zipcode'" ng-model="data.programsZipcode">
 			</td>
 			<td>
-				<div ng-dropdown-multiselect=""  options="stringData" ng-show="data.zipInsSelect=='Installation'" selected-model="example9model" extra-settings="example9settings"></div>
+				<select ng-model='selectMiles' ng-show="data.zipInsSelect=='Zipcode'">
+	  				<option id = '25'>25 miles</option>
+	  				<option id= '50'>50 miles</option>
+	  				<option id = '100'>100 miles</option>
+	  				<option id = '250'>250 miles</option>
+	  				<option id = '500'>500 miles</option>
+				</select>
+			</td>
+			<td>
+				<div ng-dropdown-multiselect="" ng-if="data.zipInsSelect=='Installation'||data.zipInsSelect=='Zipcode'" options="stringData" selected-model="example9model" extra-settings="example9settings"></div>
+				
+
 	    				<!--<td><div ng-dropdown-multiselect="" options="instypeData" selected-model="instypeModel" extra-settings="instypeSettings"></div>-->
 	    					<!--<select name="prgSelect"  ng-model="data.prgSelect">
       							<option value="">Select program or service</option>
@@ -83,7 +93,10 @@
 	      		<!--<input type="text" placeholder='Enter a Installation'
 				ng-model="prg.selected" uib-typeahead="base for base in prgmibases | filter:$viewValue | limitTo:8" class="form-control" ><br>
 				<button class="btn btn-success" ng-click="prgsubmission(data.programsSelect, prg.selected)" type="submit">Go</button>-->
-						<button class="btn btn-success" ng-show="data.zipInsSelect=='Installation'"  ng-click="prgInsSingleSelect(ins.selected, example9model)" type="submit">Done</button><br><br>
+						<button class="btn btn-success" ng-show="data.zipInsSelect=='Installation'"  ng-click="prgInsSingleSelect(ins.selected, example9model)" type="submit">Done</button>
+						<button class="btn btn-success" ng-show="data.zipInsSelect=='Zipcode'" ng-click="zipsubmission( data.programsZipcode, selectMiles, example9model)" type="submit">Done</button>
+
+						<br><br>
 						<!--<table>
 						<tr ng-repeat="contact in setContacts">
 	    				<td >	
@@ -102,22 +115,7 @@
 			      		</md-content>
 			    	</div>
 	    	</div>
-
-			<div class="form-group" ng-show="data.zipInsSelect=='Zipcode'" >
-				<input type='text' placeholder='Enter a Zipcode' ng-disabled='prg.selected' ng-model="data.programsZipcode">
-		 	   	<select ng-model='selectMiles' ng-disabled='prg.selected'>
-	  			<option id = '5'>5 miles</option>
-	  			<option id='10'>10 miles</option>
-	  			<option id = '25'>25 miles</option>
-	  			<option id = '50'>50 miles</option>
-	  			<option id = '100'>100 miles</option>
-	  			<option id = '250'>250 miles</option>
-	  			<option id = '500'>500 miles</option>
-				</select>
-			
-				<button class="btn btn-success" ng-click="prgsubmission(data.programsSelect, data.programsZipcode,selectMiles)" type="submit">Go</button>
-			</div>
  		</div>
-    
+ 
 	</div>
 </div>

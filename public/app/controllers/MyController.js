@@ -101,9 +101,7 @@ myapp.controller('typeController',  ['$scope', '$location', '$window',  'BasesMo
     $scope.instypeSettings = {template: '{{option}}' , scrollableHeight: '300px', scrollable: true, checkBoxes: true, enableSearch: true};
 
    $scope.miles = [
-
-    {id : "5", values : "5 miles"},
-    {id : "10", values : "10 miles"},
+   
     {id : "25", values : "25 miles"},
     {id : "50", values : "50 miles"},
     {id : "100", values : "100 miles"},
@@ -121,7 +119,7 @@ myapp.controller('typeController',  ['$scope', '$location', '$window',  'BasesMo
         }
          else if ($scope.data.singleSelect == 'Program or service') {
                   $scope.prgmibases = getArrayCol (BasesModel)  
-                  $scope.selectMiles = $scope.miles[1].values;
+                  $scope.selectMiles = $scope.miles[0].values;
          }      
     }
    
@@ -222,22 +220,69 @@ myapp.controller('typeController',  ['$scope', '$location', '$window',  'BasesMo
          $scope.state.selected=null;
     }
        
-    $scope.prgsubmission = function(selPrg,selIns,selZip, selMiles){
-       if (typeof(selPrg) != 'undefined'){
-            if (typeof(selZip) == 'undefined'){
-               $window.open('http://www.militaryinstallations.dod.mil/MOS/f?p=132:CONTENT:::NO::P4_INST_ID,P4_CONTENT_DIRECTORY,P4_ZIP,P4_DST,P4_TAB:' + getIDfromInstype(selIns, BasesModel) + "," + getIDfromPrograms(selPrg, ProgramsModel) +',,10,IC')
+    $scope.zipsubmission = function(selZip, selMiles, selPrg){
+        
+
+        arrcollectZipSelect = [];
+             
+        
+        if (selPrg == 'ALL'){
+            if (((selZip =='undefined')) || (typeof(selZip) == 'undefined')){
+                arrcollectZipSelect = ['Belvoir Auto', 'Bragg Dental', 'Campbell Auto', 'Campbell Dental']; 
             }
-            else if (typeof(selIns) == 'undefined'){
-                //http://www.militaryinstallations.dod.mil/MOS/f?p=132:CONTACT:::NO::P6_CONTENT_DIRECTORY,P6_ZIP,P6_DST,P6_TAB:27,22060,50,IC2
-                $window.open('http://www.militaryinstallations.dod.mil/MOS/f?p=132:CONTACT:::NO::P6_CONTENT_DIRECTORY,P6_ZIP,P6_DST,P6_TAB:' + getIDfromPrograms(selPrg, ProgramsModel) + "," + selZip + ',' + getIDfromMiles(selMiles, $scope.miles ) + ',IC2')
+            else if ((typeof(selZip) === 'string') && (selZip == '')){
+                arrcollectZipSelect = ['Belvoir Auto', 'Bragg Dental', 'Campbell Auto', 'Campbell Dental']; 
             }
-       }
-       else
-       {
-            alert ('Please select programs and services');
-       }
-       
-    } 
+        }
+        if (selPrg == 'Auto'){
+                    
+            if (selZip == '42223' && selMiles == '500 miles'){
+                    arrcollectZipSelect = ['Belvoir Auto',  'Campbell Auto'];   
+            }
+            else if (selZip =='42223' && selMiles != '500 miles'){
+                arrcollectZipSelect = ['Campbell Auto'];
+            }
+            else if (selZip == '22060'){
+                arrcollectZipSelect = ['Belvoir Auto'];
+            }
+
+            else if ((selZip =='undefined') || (typeof(selZip) == 'undefined')){
+                arrcollectZipSelect = ['Belvoir Auto',  'Campbell Auto']; 
+            }
+            else if ((typeof(selZip) === 'string') && (selZip == '')){
+                arrcollectZipSelect = ['Belvoir Auto',  'Campbell Auto']; 
+            }
+           
+        }
+
+
+        if (selPrg == 'Dental'){
+            
+            if (selZip == '28307'){
+                arrcollectZipSelect = ['Bragg Dental'];
+            }
+            else if ((selZip =='undefined') || (typeof(selZip) === 'undefined')){
+              
+                arrcollectZipSelect = ['Bragg Dental',  'Campbell Dental'];
+            }
+            else if ((typeof(selZip =='string')) && (selZip == '')){
+
+                arrcollectZipSelect = ['Bragg Dental',  'Campbell Dental'];
+            }
+            else if ((selZip == '42223') && (selMiles == '500 miles')){
+                 
+                arrcollectZipSelect = [ 'Bragg Dental', 'Campbell Dental'];
+            }
+            else if (selZip == '42223' && (selMiles != '500 miles'))
+            {
+
+                arrcollectZipSelect = ['Campbell Dental'];
+            }
+        }
+
+        $scope.setContacts = arrcollectZipSelect;
+        }
+   
 
 
     $scope.prgInsSubmission = function (prgdata, insdata){
