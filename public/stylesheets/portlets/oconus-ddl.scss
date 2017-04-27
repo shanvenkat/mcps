@@ -1,0 +1,288 @@
+.oconus-ddl {
+  .oconus-search {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: left;
+    color: $light-blue;
+    margin: 67px auto 56px;
+    text-transform: uppercase;
+    max-width: 775px;
+  }
+  .custom-label {
+    visibility: hidden;
+  }
+  .country-input {
+    position: relative;
+    max-width: 775px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $blue;
+    margin: 0 auto 81px;
+    padding: 0;
+    button {
+      display: inline-block;
+      position: absolute;
+      background-color: transparent;
+      height: 100%;
+      width: 22.5px;
+      top: 0;
+      right: 29px;
+      padding: 0;
+      cursor: pointer;
+      border: none;
+      .ion-android-search {
+        display: inline-block;
+        position: absolute;
+        background-color: transparent;
+        color: $light-blue;
+        font-size: 30px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        border: none;
+        &:before {
+          top: calc(50% - 15px);
+          right: 0;
+          position: absolute;
+        }
+      }
+    }
+    #oconusText {
+      box-sizing: border-box;
+      max-width: 100% !important;
+      padding: 24px 55px 24px 35px;
+      width: 100%;
+      background-color: $pale-grey-two;
+      border-radius: 100px;
+      border: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+    input#oconusText[type="text"] {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      height: 100%;
+    }
+    #oconusText:-moz-placeholder {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: none;
+      opacity: 1;
+    }
+    #oconusText:-ms-input-placeholder {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: none;
+    }
+
+		input[type='text']:-ms-input-placeholder {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: none !important;
+    }
+
+    #oconusText::-moz-placeholder {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: none;
+      opacity: 1;
+    }
+    #oconusText::-webkit-input-placeholder {
+      color: $blue;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: none;
+    }
+    ul.typeahead.dropdown-menu {
+      margin-top: 0;
+      width: 100%;
+      border-top: 0;
+      padding: 0;
+      width: 85%;
+      max-width: 85%;
+      left: 10% !important;
+      background-color: white;
+      li {
+        a {
+          color: $blue;
+          font-family: 'Work Sans', sans-serif;
+          font-size: 1.25rem;
+          font-weight: 500;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-weight: 500;
+          padding: 19px 20px 17px 29px;
+          border-bottom: solid 2px $pale-grey-two;
+          text-transform: uppercase;
+        }
+        &.active>a,
+        &.active>a:hover,
+        .active>a:focus {
+          background-color: $blue;
+          color: white;
+          background-image: none;
+        }
+        &:last-child a {
+          border-bottom: none;
+        }
+      }
+    }		
+  }
+  .oconus-selected-country-info {
+    @include flex;
+    @include justify-content(center);
+    padding: 57px 40px 77px;
+    margin: 0 -50px;
+    color: $light-blue;
+    background-color: $pale-grey;
+    table {
+      width: 100%;
+      max-width: 970px;
+      text-align: left;
+      caption {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: left;
+        box-shadow: inset 0 -3px 0 0 rgba(18, 52, 73, 0.1);
+        padding-bottom: 21px;
+        .country-query {
+          text-transform: capitalize;
+        }
+      }
+      tr th {
+        font-family: 'Work Sans', sans-serif;
+        font-size: .875rem;
+        font-weight: bold;
+        letter-spacing: 0.3px;
+        min-width: 150px;
+        padding: 21px 10px 23px 0;
+        box-shadow: inset 0 -3px 0 0 $dark-slate-blue;
+        text-transform: uppercase;
+      }
+      tr td {
+        font-family: 'Arvo', serif;
+        font-size: .875rem;
+        line-height: 1.71;
+        color: $dark-grey;
+        padding: 16px 10px 18px 0;
+        border-bottom: solid 2px rgba(194, 194, 194, 0.2);
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+  .no-results-msg {
+    font-family: 'Work Sans',sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $blue;
+    line-height: 1.2;
+    text-align: left;
+    max-width: 775px;
+    margin: 0 auto 81px;
+    word-wrap: break-word;
+    .query {
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Need to add oconus-ddl-title class to advanced stying on dynamic data list portlet on page; didn't want to just use the taglib-header 
+class because it may be used elsewhere in Liferay */
+.oconus-ddl-title {
+  form {
+    margin: 0;
+  }
+  .taglib-header {
+    display: none;
+  }
+  margin-bottom: -20px; /* Accounts for margin on random <form> at bottom of div#content */
+  padding: 0 40px;
+}
+
+@media(max-width: 875px) {
+  .oconus-ddl .oconus-selected-country-info {
+    table {
+      thead {
+        display: none;
+      }
+      tr {
+        margin-top: 30px;
+        background-color: white;
+        display: block;
+        box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+        td {
+          display: block;
+          border-bottom:  none;
+          padding: 20px 20px 10px;
+          &:before {
+            content: attr(data-th) ": ";
+            display: block;
+            font-family: 'Work Sans',sans-serif;
+            font-size: .875rem;
+            font-weight: bold;
+            letter-spacing: .3px;
+            text-transform: uppercase;
+            color: $blue;
+            margin-bottom: 10px;
+          }
+          &:last-child {
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .oconus-ddl {
+    .oconus-search {
+      margin: 60px auto;
+    }
+    .country-input {
+      margin-bottom: 60px;
+    }
+    .no-results-msg {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .oconus-ddl .country-input {
+    ul.typeahead.dropdown-menu {
+      width: 75%;
+      max-width: 75%;
+      left: 15% !important;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .oconus-ddl .country-input {
+    ul.typeahead.dropdown-menu {
+      width: 70%;
+      max-width: 70%;
+    }
+  }
+}

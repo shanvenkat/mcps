@@ -1,0 +1,112 @@
+.aui{  
+  .article-feedback{
+    @extend .remove-side-margins;
+    @include flex;
+    @include justify-content(flex-start);
+    @include align-items(center);
+    margin-bottom: -20px;
+    padding: 0 15%;
+    background-color: $pale-grey;
+    
+    .initial-feedback{
+      @include flex;
+      @include align-items(center);
+      @include justify-content(flex-start);
+      width: 100%;
+
+      .feedback-options{
+        @include flex;
+        @include align-items(center);
+
+        label{
+          .input-text{
+            margin-left: 20px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: .875rem;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            color: $blue;
+            text-transform: uppercase;
+            margin-right: 57px;
+          }
+        }
+      }
+    }
+    
+    .second-feedback{
+      width: 100%;
+
+      form{
+        @include flex;
+        @include justify-content(space-between);
+        margin: 59px 0 30px;
+
+        .response-area{
+          @include flex;
+          @include align-items(flex-end);
+          @include flex-direction(column);
+          width: 50%;
+
+          textarea{
+            width: 100%;
+            min-height: 120px;
+            padding: 15px 19px;
+            background-color: white;
+            border: solid 4px $medium-grey;
+            font-family: 'Arvo', serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: $light-blue;
+            box-sizing: border-box;
+          }
+          button {
+            @extend .filled-button.secondary-filled;
+          }
+        }
+      }
+    }
+
+    .feedback-title{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      line-height: 1.2;
+      color: $light-blue;
+      margin-right: 58px;
+    }
+    
+    .extra-padding{
+      padding: 74px 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .article-feedback {
+      padding: 0 40px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .article-feedback {
+      padding: 0 40px;
+
+      .initial-feedback{
+        @include flex-direction(column);
+        @include align-items(flex-start);
+
+        .feedback-options{
+          margin: 20px -12px;
+        }
+      }
+
+      .second-feedback form{
+        @include flex-direction(column);
+
+        .response-area{
+          margin-top: 20px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

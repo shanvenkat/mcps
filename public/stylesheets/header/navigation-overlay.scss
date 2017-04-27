@@ -1,0 +1,442 @@
+#mos-menu{
+  @extend .fullscreen-overlay;
+  padding: 150px 200px;
+  overflow-y: auto;
+  background: white;
+
+  .icon-button{
+    background-color: transparent;
+	  border: 0;
+    z-index: 1;
+    
+    .red-line{
+      width: 32px;
+      height: 6px;
+      background-color: $red;
+    }
+    
+    p{ 
+	  font-family: 'Work Sans', sans-serif;
+      font-size: 0.5625rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: right;
+      color: $red;
+      padding-top: 12.3px;
+      text-align: center;
+    }
+    
+	&.top-right{
+	  position: fixed;
+	  right: 42px;
+	  top: 39px;
+	  width: auto;
+	  color: black;
+    }  
+  }
+
+  .column-three{
+    width: 246px;
+    
+    .confidential-help-button{
+      margin-bottom: 70px;
+    }
+
+    .sso-holder{
+      padding-top: 40px;
+      border-top: 3px solid $pale-grey-three;
+  
+      .log-in-desktop, .log-out-desktop{
+        text-transform: uppercase;
+        padding-left: 9px;
+        float: left;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $light-blue;
+      }
+
+      img{
+        float: left;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  &.visible{
+    display: block;
+  }
+
+  .heading{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.active{
+      font-size: 1.25rem;
+      letter-spacing: 1.1px;
+      color: $blue;
+    }
+    &.inactive{
+      font-size: 1rem;
+      letter-spacing: 2px;
+      line-height: 1.75;
+      color: $light-blue-more-transparent;
+    }
+  }
+
+  ul{
+
+    &.left-align{
+	    text-align: left;
+	  }
+
+	li{
+	  padding: 0 0 30px 0;
+	  list-style-type: none;
+
+	  .inactive-menu{
+	    font-family: 'Work Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: left;
+      font-weight: normal;
+      color: $blue;
+      letter-spacing: 0px;
+    }
+      
+    a{
+      text-decoration: none;
+    }
+	}
+      
+    .active-item{
+      padding: 0 0 30px 0;
+      list-style-type: none;
+          
+      .active-menu{
+        @include transition(all, 300ms, ease);
+		    font-family: 'Work Sans', sans-serif;
+		    font-size: 1rem;
+        font-weight: 500;
+		    line-height: 1.5;
+        letter-spacing: 0px;
+		    text-align: left;
+	      color: $blue;
+        cursor: pointer;
+        @include flex;
+        @include inline-flex;
+        @include align-items(center);
+	  }
+          
+      .horizontal-line{
+        width: 20px;
+        background: $red;
+        height: 6px;
+        margin: 5px 0 6px -20px;
+        display: inline-block;
+        opacity: 0;
+        @include transition(all, 300ms, ease);
+      }
+    }
+
+	  &.active{
+	    margin: 0 0 30px 0;
+	  }
+
+    &.inactive{
+	    margin: 25px 0 0 0;
+	  }
+  }
+
+  .mobile-menu{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+
+    .main-menu{
+      @include transition(right, 400ms, ease);
+      position: absolute;
+      width: 100vw;
+      right: 0;
+      height: 100%;
+
+      .link{
+        font-family: 'Work Sans', sans-serif;
+        @include flex;
+        @include justify-content(center);
+        @include align-items(center);
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-align: center;
+        color: $light-blue;
+        margin: 0 auto;
+        cursor: pointer;
+
+        .link-text{
+          padding-left: 24px;
+        }
+        &.top-margin{
+          margin-top: 110px;
+        }
+        &.margin{
+          margin-top: 57px;
+        }
+      }
+      &.menu-inactive{
+        right: 100vw;
+        
+        .menu-footer{
+          right: 100vw;
+        }
+      }
+
+      .menu-footer{
+        @include transition(right, 400ms, ease);
+        background: white;
+        height: 90px;
+        border-top: 3px solid $pale-grey-three;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+
+        .live-chat{
+          width: 50%;
+          height: 100%;
+          float: left;
+          cursor: pointer;
+          @include flex;
+          @include justify-content(center);
+          @include align-items(center);
+
+          .text{
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.5;
+            text-align: center;
+            color: $light-blue;
+          }
+
+          .live-chat-img{
+            height: 20px;
+            width: 20px;
+            padding-right: 10px;
+          }
+        }
+
+        .log-in{
+          width: 50%;
+          height: 100%;
+          float: right;
+          cursor: pointer;
+          @include flex;
+          @include justify-content(center);
+          @include align-items(center);
+
+          .log-in-mobile, .log-out-mobile{
+            text-transform: uppercase;
+            padding-left: 9px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            color: $light-blue;
+          }
+
+          img{
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    .header-holder{
+      @include transition(left, 400ms, ease);
+      @include flex;
+      @include justify-content(center);
+      @include align-items(center);
+      text-transform: uppercase;
+      padding: 90px 0 20px 0;
+      position: fixed;
+      left: 100vw;
+      border-bottom: 3px solid $pale-grey-three;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: $light-blue;
+      cursor: pointer;
+      background: white;
+      width: 100%;
+
+      .header-text{
+         @include flex;
+         padding-right: 34px;
+      }
+
+      i{
+        margin-right: 10px;
+      }
+    }
+
+    .categories-page{
+      @include transition(left, 400ms, ease);
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      left: 100vw;
+      top: 0;
+
+      .body{
+        text-align: center;
+        padding-top: 165px;
+        height: 100vh;
+        overflow: scroll;
+
+        .active{
+          color: $light-blue;
+          margin: 0;
+
+          .active-menu{
+            transition: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .quick-access-page{
+      @include transition(left, 400ms, ease);
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      left: 100vw;
+      top: 0;
+
+      .body{
+        text-align: center;
+        padding-top: 165px;
+        overflow: scroll;
+        height: 100vh;
+      }
+
+      .active{
+          color: $light-blue;
+          margin: 0;
+
+          .active-menu{
+            transition: none;
+            cursor: pointer;
+          }
+        }
+    }
+
+    .account-page{
+      @include transition(left, 400ms, ease);
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      left: 100vw;
+      top: 0;
+
+      .body{
+        text-align: center;
+        padding-top: 165px;
+        overflow: scroll;
+        height: 100vh;
+      }
+
+      .active{
+          color: $light-blue;
+          margin: 0;
+
+          .active-menu{
+            transition: none;
+            cursor: pointer;
+          }
+        }
+    }
+
+    .active-section{
+      left: 0;
+
+      .header-holder{
+        left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+  #mos-menu{
+    padding: 150px 75px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px){
+  #mos-menu{
+    .mobile-menu{
+      display: none;
+    }
+    .column-three{
+      margin-top: 100px; 
+
+      .confidential-help-button {
+        margin-bottom: 49px;
+      }
+    }
+    ul .active-item:hover{
+            
+      .horizontal-line{
+        opacity: 1;
+        margin: 5px 6px 6px 0px;
+        @include transition(all, 300ms, ease);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px){
+  #mos-menu{
+    .mobile-menu{
+      display: none;
+    }
+    .column-three{
+      margin-top: 20px; 
+    }
+  }
+}
+
+@media (max-width: 767px){
+  #mos-menu{
+    padding: 0;
+    .desktop-menu{
+      display: none;
+    }
+    .confidential-help-div{
+      @include flex;
+      @include justify-content(center);
+      @include align-items(center); 
+      margin-top: 90px;
+      
+      a{
+        width: 100%;
+        padding: 0 20px;
+
+        .confidential-help-button {
+          font-size: 1.125rem;
+          box-sizing: border-box;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

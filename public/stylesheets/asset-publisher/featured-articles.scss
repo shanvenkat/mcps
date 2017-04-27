@@ -1,0 +1,308 @@
+.portlet-asset-publisher .featured-section{
+  .featured-articles{
+	@include flex;
+	@include flex-wrap(wrap);
+	margin: -15px;
+	
+    h3{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      text-align: left;
+      width: 100%;
+    }
+  
+    p{
+      font-family: 'Work Sans', sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: left;
+    }
+  
+    .featured-article{
+      @include flex;
+	  @include flex-direction(column);
+	  @include justify-content(space-between);
+	  box-sizing: border-box;
+      position:relative;
+      background: white;
+      overflow: hidden;
+      height:550px;
+      margin: 15px;
+      padding: 10.8%;
+	  box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    
+      .blue-overlay{
+        @include transition(all, 400ms, ease);
+        background: $blue-image-overlay;
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        z-index: 1;
+      }
+    
+      .image{
+        @extend .image-background.cover;
+        @include transition(all, 400ms, ease);
+        height:200px;
+	  
+	    &.greyscale{
+          @include greyScale();
+        }
+	  
+        img{
+          width: 100%;
+          opacity: 0;
+        }
+
+        &.mobile{
+          height: 130px;
+        }
+      }
+    
+      .title{      
+        margin-top: 4.54%;
+        h3{
+          color: $light-blue;
+        }
+      }
+    
+      .article-data{
+        margin-top: 2.36%;
+        div{
+          color: $light-blue;
+          font-size: 0.75rem;
+          line-height: 2.33;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          font-family: 'Work Sans', sans-serif;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+        }
+      
+        .date{
+          display: inline;
+          padding-right: 20px;
+        }
+      
+        .read-time{
+          display: inline;
+        }
+      }
+    
+      .summary-text{
+        margin-top: 2.36%;
+        visibility: hidden;
+		p{
+          color:white;
+          font-family: 'Arvo', serif;
+  		  font-size: 1rem;
+  		  font-weight: normal;
+  		  line-height: 1.5;
+  		  letter-spacing: -0.5px;
+          overflow:hidden;
+          max-height: 4.5rem;
+     	}
+      }
+    
+      .read-more-hover{
+        @include transition(all, 700ms, ease);
+        position: absolute;
+   	    height: 16.6%;
+   	    left: 50%;
+  	    width: 184px;
+        top: 83.4%;
+  	    background: $light-grey-transparent;
+  	    border-radius: 92px 92px 0 0;
+        margin-left: -92px;
+      }
+    
+      .read-more-text{
+  	    position:absolute;
+  	    bottom:10px;
+  	    left:50%;
+  	    width:100px;
+  	    margin-left:-40px;
+        color: $light-blue;
+  	    font-size: 0.875rem;
+  	    letter-spaccing: 0.8px;
+  	  }
+    }
+  }
+}
+
+@media (min-width: 992px){
+  .portlet-asset-publisher .featured-section .featured-articles .featured-article{
+    
+     &:hover, &:focus{
+	   @include transition(all, 400ms, ease);
+	   background-color: $light-blue;
+	   box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.25);
+	  
+	   .image{
+         height:180px;
+	  
+	     &.greyscale{
+           @include greyScaleOff();  
+         }
+       }
+      
+       .blue-overlay{
+         height: 180px;
+		 opacity: 0;
+       }
+    
+       .title{      
+         h3{
+		   color: white;
+         }
+       }
+    
+       .article-data{
+         div{
+		   color: white;
+         }
+       }
+    
+       .summary-text{
+	     visibility: visible;
+       }
+     
+	   .read-more-hover {
+         background: rgba(0, 140, 234, 0);
+       }
+      
+       .read-more-text{
+         color: white;
+       }
+	 } 
+   }
+}
+
+@media (max-width: 1250px) and (min-width: 992px){
+  .portlet-asset-publisher .featured-section .featured-articles .featured-article{
+    height: 394px;
+		
+	.blue-overlay{
+	  height: 134.5px;
+    }
+    
+    .image{
+      height:134.5px;
+    }
+    
+    .title{      
+      h3{
+        font-size: 1rem;
+      }
+    }
+    
+    .article-data{
+      div{
+	    font-size: .625rem;
+      }
+      
+      .read-time{
+        padding-left: 20px;
+      }
+    }
+    
+    .summary-text{
+      p{
+  	    font-size: .875rem;
+  		max-height: 3.937rem;
+      }
+    }
+    
+    .read-more-hover{
+   	  height: 16.6%;
+   	  left: 50%;
+  	  width: 132.5px;
+      top: 83.4%;
+  	  border-radius: 66px 66px 0 0;
+      margin-left: -66.25px;
+    }
+    
+    .read-more-text{
+  	  font-size: 0.75rem;
+  	  margin-left: -36px;
+      bottom: 6px;
+  	}
+  		
+  	&:hover, &:focus{
+  	  .blue-overlay{
+        height: 121.05px;
+  	  }
+  			
+  	  .image {
+  	    height: 121.05px;
+  	  }
+  	}
+  }
+}
+
+@media (max-width: 991px){
+  .portlet-asset-publisher .featured-section .featured-articles .featured-article{
+    height: 130px;
+    padding: 0;
+
+    .image{
+      margin: 0;
+      width: initial;
+    }
+    
+    .mobile-blue-overlay{
+      background: $blue-image-overlay;
+      position: absolute;
+      width: 100%;
+      height: 100%;   
+      z-index: 1;
+    }
+    
+    .vertical-center{
+      @include flex;
+      @include justify-content(center);
+      @include flex-direction(column);
+      height: 130px;
+      
+      .title{
+        @include flex;
+        width: initial;
+        margin: 0;
+        padding: 0 30px;
+      }
+    
+      .article-data{
+        @include flex;
+	    @include flex-wrap(wrap);
+        width: initial;
+        margin: 0;
+        padding: 0 30px;
+      }
+	}
+    
+    .read-more-hover{
+      display: none;
+    }
+    
+    .read-more-text{
+      display: none;
+    }
+  } 
+}
+
+@media (max-width: 530px) {
+  .portlet-asset-publisher .featured-section .featured-articles{
+    h3 {
+      font-size: 1rem;
+  	}
+  	.featured-article .article-data p{
+  	  font-size: .6875rem;
+  	}
+  }
+}

@@ -1,0 +1,16 @@
+.aui{
+  .image-background{
+    &.repeat{
+      background-repeat: repeat;
+    }
+    &.cover{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
+  }
+
+  .gray-background{
+    background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0), rgba(25, 72, 103, 0.05)), radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5));
+  }
+}

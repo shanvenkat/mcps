@@ -1,0 +1,304 @@
+.journal-content-article .mos-article{
+  @extend .remove-side-margins;
+  
+  .mos-topic-header{
+    padding-top: 100px;
+    min-height:150px;
+    position: relative;
+    margin-left: -10px;
+  
+    .background-gradient {
+      background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0), rgba(25, 72, 103, 0.05)), radial-gradient(circle at 74% 48%, rgba(255, 255, 255, 0), rgba(250, 250, 253, 0.05) 29%, rgba(225, 229, 245, 0.5));
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .title{
+      position: relative;
+      font-family: 'Work Sans', sans-serif;
+      text-align: left;
+      margin: 0 8%;
+      font-size: 3rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.25;
+      letter-spacing: 1.6px;
+      color: $light-blue;
+      padding: 40px 0 49px;
+      
+      &.uppercase{
+        text-transform: uppercase;
+      }
+     }
+  }
+
+  .article-image{
+    @extend .image-background.cover;
+    @extend .remove-side-margins;
+    overflow: hidden;
+    margin-top: 100px;
+    
+    img{
+      opacity: 0;
+      width: 100%;
+    }
+    @media screen{
+    	height: 450px;
+    }
+  }
+
+  .article-image-caption{
+    @extend .darkblue-textured-overlay;
+    padding: 15px 115px;
+    font-family: Roboto Slab;
+    font-size: .75rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: white;
+  }
+
+  .article-content{
+    @include flex;
+    @include justify-content(center);
+    margin-top: 5px;
+    padding: 0 40px;
+
+    .content{
+      max-width: 775px;
+      width: 100%;
+
+      .taglib-asset-tags-summary {
+        padding: 20px 0;
+        .single-tag-div {
+          margin-right: 10px;
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .article-head{
+      padding: 70px 0 0 0;
+
+      .metadata{
+        font-family: 'Work Sans', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: 0.9px;
+        color: $light-blue;
+        text-transform: uppercase;
+        
+        .seperator{
+          padding: 0 15px;
+        }
+      }
+	}
+
+    h1{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      letter-spacing: 1.9px;
+      color: $light-blue;
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    h2{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      color: $light-blue;
+      margin: 60px 0 30px 0;
+    }
+
+    h3{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: 0.3px;
+      color: $blue;
+      margin: 0;
+    }
+
+    h4{
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
+      color: $blue;
+    }
+
+    p{
+      font-family: 'Arvo', serif;
+      font-size: 1rem;
+      font-weight: normal;
+  	  font-style: normal;
+  	  font-stretch: normal;
+      line-height: 1.5;
+      color: $dark-grey;
+    }
+
+    li{
+      font-family: 'Arvo', serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: $dark-grey;
+      margin-bottom: 15px;
+      padding-left: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    hr{
+      background-color: $medium-grey;
+      height: 3px;
+      border: none;
+      margin: 0 0 30px 0;
+    }
+
+    a{
+      @extend a.link-underline;
+      color: $med-dark-red;
+      &.tag {
+        color: $light-blue;
+        &:hover, &:focus {
+          border-color: $light-blue;
+          color: white;
+        }
+      }
+    }
+
+    table{
+      border: none;
+      border-top: solid 3px $medium-grey;
+      border-bottom: solid 3px $medium-grey;
+      margin-bottom: 31px;
+
+      tr{
+        border-bottom: solid 2px rgba($grey, .2);
+
+        td{
+          border: none;
+          padding: 30px 0;
+          vertical-align: top;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .lead-text{
+      font-family: 'Arvo', serif;
+      font-size: 1.125rem;
+      font-weight: normal;
+      line-height: 2;
+      letter-spacing: -0.4px;
+      color: $light-blue;
+    }
+
+    .emphasize-text{
+      font-weight: bold;
+  	  color: $dark-slate-blue-two;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      padding-bottom: 10px;
+    }
+
+      .inline-image-caption {
+        font-family: 'Arvo', serif;
+        font-size: .75rem;
+        line-height: 1.5;
+        color: white;
+        background-color: $blue;
+        padding: 16px 20px;
+        margin: -10px 0 10px;
+    }
+
+    .row-fluid{
+      margin: 0px 0px 45px 0px;
+    }
+
+    .outlined-box{
+      text-transform: capitalize;
+      background-color: transparent;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: 0.4px;
+      padding: 30px 45px;
+      color: $blue;
+      text-align: center;
+      display: block;
+    }
+
+    .checkbox-list li{
+      list-style: url(../images/icons/checkbox-icon.svg);
+    }
+
+    .vertical-center{
+      @include flex;
+      @include align-items(center);
+    }
+
+    .flex-wrap{
+      @include flex;
+      @include flex-wrap(wrap);
+    }
+  }
+
+  .pdf-print {
+    float: left;
+    width: 100%;
+    padding: 20px 0;
+  }
+}
+
+#at-share-dock{
+	z-index: 2!important;
+}
+
+.atss{
+	z-index: 2!important;
+}
+
+@media (max-width: 767px) {
+	.journal-content-article .mos-article {
+    .article-image-caption{
+      padding: 15px;
+    }
+    
+    .mos-topic-header{
+      .title{
+          width: auto;
+          font-size: 2.5rem;
+      }
+    }
+
+    .article-content .article-head{
+      padding: 20px 0 0 0;
+      margin-left: 0;
+      border-left: none;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+	.journal-content-article .mos-article .article-image{
+		margin-top: 90px;
+	}	
+}

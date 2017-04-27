@@ -87,9 +87,12 @@ var myapp = angular.module('myapp', ['ngRoute',
                     templateUrl: 'app/views/type.html',
                     controller: 'typeController'
                 }).
-                
+                when('/misearch', {
+                    templateUrl: 'app/views/misearch.html',
+                    controller: 'typeController'
+                }).
                 otherwise({
-                    redirectTo: '/type'
+                    redirectTo: '/misearch'
                 });
             });
 

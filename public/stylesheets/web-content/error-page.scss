@@ -1,0 +1,27 @@
+.aui .portlet-journal-content .error-page{
+  @extend .remove-side-margins;
+  @extend .side-padding;
+  @extend .image-background.cover;
+  @include flex;
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
+  background-image: url(../images/error-page.png);
+  height: calc(100vh);
+  min-height: 545px;
+  margin-bottom: -20px;
+  p {
+    width: 100%;
+  }
+  
+  a:hover, a:active, a:focus{
+    color: white;
+    text-decoration: none;
+  }
+
+  .filled-button{
+    @include flex;
+    @include align-items(center);
+    @include justify-content(center);
+  }
+}

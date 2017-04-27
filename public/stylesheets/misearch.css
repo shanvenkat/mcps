@@ -1,0 +1,103 @@
+.Military-installatio {
+  width: 307.6px;
+  height: 24px;
+  font-family: WorkSans;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  color: #12334a;
+}
+
+  h1 {
+  position: absolute;
+  left: 215px;
+  top: 339px;
+  width: 258px;
+  height: 40px;
+  font-family: WorkSans;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #194867;
+
+}
+.Military-Instalation-search {
+  
+  width: 1400px;
+  height: 1474px;
+  background-color: #f8f9fd;
+}
+
+.Dropdown {
+  left: 516px;
+  top: 317px;
+  width: 669px;
+  height: 80px;
+}
+
+.Rectangle-4-Copy {
+  position: absolute;
+  left: 516px;
+  top: 317px;
+  width: 669px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+.Rectangle-4-Copy-textbox {
+  position: absolute;
+  left: 215px;
+  top: 437px;
+  width: 969px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+.Search {
+  position: absolute;
+  left: 1132px;
+  top: 462px;
+  width: 23px;
+  height: 30px;
+  object-fit: contain;
+  font-family: Ionicons;
+  font-size: 30px;
+  color: #194867;
+  color: var(--dark-slate-blue);
+}
+
+.hero-bg {
+  width: 1400px;
+  height: 850px;
+  object-fit: contain;
+  background-image: radial-gradient(circle at 69% 50%, rgba(255, 255, 255, 0.08), rgba(250, 251, 253, 0.15) 45%, rgba(240, 242, 251, 0.77));
+}
+  
+  #wrap{
+    width:100%;
+    margin:0 auto;
+}
+.box{
+    float:left;
+    width:40%;
+    height:75px;
+    background:white;
+    border:1px solid red;
+    margin:0 auto;
+}
+
+.box2{
+    float:left;
+    width:60%;
+    height:75px;
+    background:white;
+    border:1px solid red;
+    margin:0 auto;
+}
+

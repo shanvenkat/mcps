@@ -1,0 +1,96 @@
+.aui .portlet-asset-publisher .understanding-basics-section {
+  .essential-tiles {
+    @include flex;
+    @include flex-wrap(wrap);
+    margin: -15px;
+  }
+
+  a .essential-tile {
+    @include transition(all, 400ms, ease);
+    @include flex;
+    @include flex-direction(column);
+    height: 345.4px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 40px;
+    margin: 15px;
+    text-decoration: none;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+
+    .blue-overlay{
+      @include transition(all, 400ms, ease);
+      background: $blue-image-overlay;
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      z-index: 1;
+    }
+    
+    .image-wrapper{
+      position: relative;
+    }
+
+    .image {
+      @extend .image-background.cover;
+      @include transition(all, 400ms, ease);
+      height: 150px;
+  
+      &.greyscale {
+        @include greyScale();
+      }
+    
+      img {
+        width: 100%;
+        opacity: 0;
+      }
+    }
+
+    h3 {
+      margin-top: 30px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: left;
+      color: $light-blue;
+    }
+  }
+
+  a:hover .essential-tile, a:focus .essential-tile {
+    background-color: $light-blue;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    
+    .blue-overlay{
+      opacity: 0;
+      height: 130px;
+    }
+
+    .image{
+      @include greyScaleOff();
+      height: 130px;
+    }
+
+    h3{
+      color: white;
+    }
+  }
+}
+
+.aui.mobile.touch .portlet-asset-publisher .understanding-basics-section a .essential-tile {
+  background-color: $light-blue;
+  box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+  
+  .blue-overlay{
+    opacity: 0;
+    height: 130px;
+  }
+
+  .image{
+    @include greyScaleOff();
+    height: 130px;
+  }
+
+  h3{
+    color: white;
+  }
+}

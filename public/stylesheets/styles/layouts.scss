@@ -1,0 +1,38 @@
+.remove-side-margins{
+  margin: 0 -10px;
+}
+
+.side-padding{
+  padding: 0 20px;
+}
+
+.fullscreen-overlay{
+  @extend .blue-textured-overlay;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  z-index: -1;
+  display: none;
+
+  &.visible{
+    z-index: 100;
+    display: block;
+  }
+}
+
+.dockbar-margin {
+  .fullscreen-overlay {
+    margin-top: 40px;
+    @media (max-width: 767px){
+      margin-top: 47px;
+    }
+  }
+}
+
+.set-width{
+  max-width: 775px;
+  margin: 0 auto;
+  padding: 0 30px;
+}

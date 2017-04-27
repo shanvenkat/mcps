@@ -1,0 +1,52 @@
+.aui {
+  .home-section{
+    @extend .remove-side-margins;
+    @extend .gray-background;
+    padding: 80px 8% 120px;
+  }
+
+	.taglib-asset-tags-summary{
+		line-height: 25px;
+		.tags-title {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 0.75rem;
+			font-weight: bold;
+			line-height: 2.33;
+			letter-spacing: 0.5px;
+			color: $light-blue;
+			text-transform: uppercase;
+			padding-right: 10px;
+		}
+		.tag{
+			background-color: white;
+			border: solid 2px $pale-grey-three;
+			height: 25px;
+			border-radius: 100px;
+			padding: 4px 19px 5px 23px;
+			font-family: 'Arvo', serif;
+			font-size: 0.6875rem;
+			color: $light-blue;
+			background-position-x: 5px;
+			background-size: 13px;
+			white-space: nowrap;
+
+			&:hover{
+				background-color: $light-blue;
+				border-color: $light-blue;
+				color: white;
+			}
+		}
+	}
+
+	.pdf-link {
+		background-image: url('../images/icons/icon-att-pdf.svg');
+		background-position: 0 50%;
+		background-size: 20px;
+		background-repeat: no-repeat;
+		padding-left: 30px;
+		a {
+			@extend a.link-underline;
+			vertical-align: middle;
+		}
+	}
+}

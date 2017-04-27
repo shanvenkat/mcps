@@ -1,0 +1,267 @@
+.aui #mi {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(20, 60, 86, 0.34)), linear-gradient(rgba(80, 119, 144, 0.9), rgba(80, 119, 144, 0.9));
+	.mi-container {
+		padding: 80px 8%;
+		.mi-left-col {
+			max-width: 497px;
+			padding-top: 27px;
+		}
+		.mi-form-container {
+		    @include flex;
+		    @include flex-direction(column);
+		    @include align-items(center);
+			select, input {
+				width: 398px;
+				height: 50px;
+				font-family: 'Work Sans', sans-serif;
+				font-size: .875rem;
+				font-weight: 500;
+				color: $blue;
+				text-align: left;
+				padding: 0px 23px;
+				@include appearance(none);
+				border: none;
+				border-radius: 100px;
+				box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.2);
+				margin: 0;
+				&:focus {
+					outline: none;
+				}
+			}
+
+			#installationText::-webkit-input-placeholder {
+				color: $blue;
+			}
+
+			#installationText::-moz-placeholder {
+				color: $blue;
+				opacity: 1;
+			}
+
+			#installationText:-ms-input-placeholder {
+				color: $blue;
+			}
+
+			#installationText:-moz-placeholder {
+				color: $blue;
+				opacity: 1;
+			}
+
+			/* Container used for styling the custom select */
+			.custom-select {
+			  position: relative;
+			  display: inline-block;
+			  padding: 0;
+			  margin-bottom: 30px;
+			}
+
+			/* This is the native select, we're making everything but the text invisible so we can see the button styles in the wrapper */
+			.custom-select select {
+			  @include appearance(none);
+			  cursor: pointer;
+			  display: inline-block;
+			  overflow: hidden !important;
+			  overflow-x: hidden  !important;
+			  text-overflow: ellipsis;
+			  white-space: nowrap;
+			  width: 432px;
+			  box-sizing: content-box;
+			  padding: 0px 16px 0 23px; 
+			  height: 50px;
+
+			  &:not(:-internal-list-box) {
+			    overflow: hidden !important;
+			    overflow-x: hidden  !important;
+			  }
+			  * {
+			    background-color: #fff !important;
+			  }
+			}
+
+			/* Custom arrow sits on top of the select - could be an image, SVG, icon font, etc. or the arrow could just baked into the bg image on the select. */
+
+			.custom-select::after {
+			  font-family: 'Material Icons';
+			  font-size: 1.5rem;
+			  color: $light-blue;
+			  content: "\E313";
+			  position: absolute;
+			  top: calc(50% - 10px);
+			  right: 20px;
+			  display: block;
+			  z-index: 2;
+			  /* This hack make the select behind the arrow clickable in some browsers */
+			  pointer-events:none;
+			  margin: 0 auto;
+			}
+
+			/* Set options to normal weight */
+			.custom-select option {
+				width: 100%;
+				background: white;
+				@include appearance(none);
+			}
+
+			.custom-label {
+				visibility: hidden;
+			}
+
+			 /* IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance, IE 9 and earlier get a native select - targeting media query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5 - looking for better ways to achieve this targeting */
+			/* The second rule removes the odd blue bg color behind the text in the select button in IE 10/11 and sets the text color to match the focus style's - fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box */
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			  .custom-select select::-ms-expand {
+			    display: none;
+			  }
+			  .custom-select select:focus::-ms-value {
+			    background: transparent;
+			    color: #222;
+			  }
+			}
+
+			.custom-input {
+				position: relative;
+			    display: inline-block;
+			    #installationText {
+			    	padding-right: 50px;
+			    	box-sizing: content-box;
+			    }
+				.ion-android-search {
+					display: inline-block;
+				    position: absolute;
+				    background-color: transparent;
+				    color: $light-blue;
+				    font-size: 1.5rem;
+				    height: 100%;
+				    width: 65px;
+				    top: 0;
+				    right: 0;
+				    cursor: pointer;
+				    border: none;
+					&:before {
+						top: calc(50% - 12px);
+	    				right: calc(50% - 12px);
+	    				position: absolute;
+	    			}
+    			}		
+			}
+
+			/* CSS styling for typeahead dropdown list */
+			ul.typeahead.dropdown-menu li:last-child a {
+				border-bottom: none;
+			}
+			ul.typeahead.dropdown-menu li:first-child a {
+				border-top: solid 2px rgba(194,194,194,0.2);
+			}
+			ul.typeahead.dropdown-menu li a {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-weight: 500;
+				border-bottom: solid 2px rgba(194,194,194,0.2);
+				padding: 10px 20px;
+				color: $blue;
+			}
+			ul.typeahead.dropdown-menu li.active a {
+				color: white;
+			}
+			.typeahead.dropdown-menu {
+				margin-top: 0px;
+				width: 420px;
+				border-top: none;
+				padding: 0;
+				left: 25px !important;
+			}
+			.dropdown-menu>.active>a, 
+			.aui .dropdown-menu>.active>a:hover, 
+			.aui .dropdown-menu>.active>a:focus {
+				background-color: $blue;
+				color: white;
+				background-image: none;
+			}
+		}
+		h2 {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 1.5rem;
+			font-weight: bold;
+			line-height: 1.0;
+			letter-spacing: 1px;
+			color: white;
+			text-transform: uppercase;
+			margin: 0;
+		}
+		h3 {
+			font-family: 'Arvo', serif;
+			font-size: 1.25rem;	
+			line-height: 1.2;
+			letter-spacing: -0.5px;
+			text-align: left;
+			color: white;
+			padding: 30px 0 39px 0;
+			margin: 0;
+		}
+		p {
+			margin: 0;
+		}
+		a {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 1rem;
+			font-weight: bold;
+			line-height: 0.88;
+			color: white;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@media (max-width: 1150px) {
+		.mi-container .mi-left-col {
+			max-width: 409px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		.mi-form-container {
+			float: left;
+		}
+		.mi-container .mi-left-col {
+			padding-bottom: 30px;
+		}
+
+	}
+
+	@media (max-width: 768px) {
+		.mi-container .mi-form-container {
+			.custom-select select, input {
+				width: 277px;
+				font-size: .75rem;
+			}
+
+			.custom-input #installationText {
+				padding-right: 16px;
+			}
+
+			.typeahead.dropdown-menu {
+				width: 265px;
+				font-size: .75rem;
+			}
+		}
+	}
+
+		@media (max-width: 375px) {
+		.mi-container .mi-form-container {
+			.custom-select select, input {
+				width: 197px;
+				font-size: .75rem;
+			}
+
+			.custom-input #installationText {
+				padding-right: 45px;
+			}
+
+			.typeahead.dropdown-menu {
+				width: 185px;
+				font-size: .75rem;
+			}
+		}
+	}
+}

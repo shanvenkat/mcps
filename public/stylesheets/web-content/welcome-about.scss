@@ -1,0 +1,221 @@
+.aui .portlet-journal-content .main-welcome-about-div {
+  @extend .remove-side-margins;
+
+  .welcome-div {
+    @extend .side-padding;
+    @extend .image-background.cover;
+    background-image: url("../images/hero-bg.png");
+    background-position: 100%;
+    height: 100vh;
+    @include flex;
+    @include justify-content(center);
+    @include flex-direction(column);
+    position: relative;
+    min-height: 850px;
+    font-family: 'Work Sans', sans-serif;
+    color: $light-blue;
+    padding: 0 8%;
+
+    .welcome-about-container {
+      @include perspective(1000px);
+      @include transform-style(preserve-3d);
+      position: relative;
+
+      .welcome-about-card {
+        @include transition (all, 1s, ease);
+        @include transform-style(preserve-3d);
+        position: relative;
+        float: left;
+
+        #front, #back {
+          @include backface-visibility(hidden);
+          @include transition (all, 1s, ease);
+          @include transform-style(preserve-3d);
+          display: block;
+          top: 0;
+        }
+
+        #front{
+          z-index: 2;
+          @include rotateY-transform(0deg);
+        }
+
+        #back {
+          @include rotateY-transform(-180deg);
+          position: absolute;
+          @include flex;
+          @include align-items(center);
+          left: 0;
+          height: 100%;
+          @include flex-direction(column);
+          @include justify-content(center);
+        }
+
+        &.flipped {
+          #back{
+            @include rotateY-transform(0deg);
+          }
+
+          #front{
+            @include rotateY-transform(180deg);
+          }
+        }
+
+        .welcome-text-div {
+          max-width: 470px;
+          .welcome-heading {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin: 0 0 8.6px 0;
+            text-transform: uppercase;
+          }
+          .mos-heading {
+            font-size: 3.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.0;
+            letter-spacing: 2px;
+            margin: 0 0 40.4px 0;
+            .beta {
+              color: $red;
+              font-size: 1.5rem;
+              letter-spacing: 1.9px;
+              vertical-align: super;
+              margin-left: -12px;
+            }
+          }
+          .welcome-info {
+            font-family: 'Arvo', serif;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            letter-spacing: -0.5px;
+            margin: 0 0 45px 0;
+          }
+        }
+        .about-beta-button-div {
+          .about-beta-button {
+            @extend .filled-button;
+            @extend .filled-button.primary-filled;
+            box-shadow: 0 30px 43px 0 rgba(211, 62, 81, 0.24);
+            font-size: 1rem;
+            font-weight: bold;
+          }
+        }
+        .about-beta-div {
+          @include rotateY-transform(180deg);
+          max-width: 470px;
+          position: relative;
+          top: 80px;
+          .close-beta-button-div {
+            width: 100%;
+            .close-beta-button {
+              float: right;
+              span {
+                line-height: 2.33;
+                font-size: 0.75rem;
+                font-family: 'Work Sans', sans-serif;
+              }
+            }
+          }
+          p {
+            margin-top: 22px;
+            margin-bottom: 0;
+            max-width: 470px;
+            font-size: 1.25rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .aui .portlet-journal-content .main-welcome-about-div {
+    .mobile-background-image {
+      background-image: url("../images/hero-bg.png");
+      background-position: 54%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .welcome-div {
+        background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0.0), rgba(25, 72, 103, 0.05)),
+        radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5));
+        background-size: contain;
+        background-position: 100% 100%;
+        height: 100vh;
+        min-height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .aui .portlet-journal-content .main-welcome-about-div {
+    .mobile-background-image {
+      background-image: url("../images/mobile-hero-bg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      .welcome-div {
+        background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0.0), rgba(25, 72, 103, 0.05)),
+        radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5));
+        background-size: contain;
+        background-position: 100% 100%;
+        height: 100vh;
+        min-height: 667px;
+        .welcome-about-container {
+          height: 100vh;
+          .welcome-about-card {
+            height: 100%;
+            width: 100%;
+            @include flex;
+            @include justify-content(center);
+            @include align-items(center);
+
+            .welcome-wrapper{
+              width: 100%;
+            }
+            #front, #back {
+              top: inherit;
+            }
+            #front {
+              @include flex;
+              @include justify-content(space-between);
+              @include flex-direction(column);
+              height: 100%;
+              padding: 100px 0 40px;
+              box-sizing: border-box;
+              .welcome-text-div {
+                .welcome-heading {
+                  margin: 0 0 8.2px 0;
+                }
+                .mos-heading {
+                  font-size: 2.25rem;
+                  letter-spacing: 1.2px;
+                  margin: 0 0 33.8px 0;
+                  .beta {
+                    margin: 0;
+                  }
+                }
+                .welcome-info {
+                  font-size: 1rem;
+                  letter-spacing: -0.4px;
+                }
+              }
+              .about-beta-button-div {
+                @include flex;
+                @include justify-content(center);
+              }
+            }
+            .about-beta-div {
+              top: inherit;
+              p {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

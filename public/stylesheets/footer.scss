@@ -1,0 +1,117 @@
+#footer{
+	@extend .side-padding;
+	margin-bottom: -1px;
+  background-image: linear-gradient(to top, rgba(25, 72, 103, 0), rgba(14, 42, 62, 0.5)), linear-gradient($light-blue, $light-blue);
+  padding: 114px 8% 40px;
+
+  h2 {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.125rem;
+  	font-weight: bold;
+  	font-style: normal;
+  	font-stretch: normal;
+    letter-spacing: 1.0px;
+    text-transform: uppercase;
+  }
+
+  a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.0rem;
+    text-decoration: none;
+    margin-right: 15px;
+  	width: 138px;
+  	height: 192px;
+  	font-style: normal;
+  	line-height: 1.5;
+  	letter-spacing: 0.6px;
+  	color: white;
+
+    &:link, &:visited {
+      color: white;
+    }
+
+    &:hover, &:active, &:focus{
+      color: white;
+      font-weight: bold;
+      border-bottom: solid $red 2px;
+    }
+  }
+
+  ul{
+  	list-style: none;
+  	padding: 0;
+
+  	li{
+      margin-bottom: 25px;
+    }
+  }
+
+  .social-media-icons {
+    @include flex;
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    padding-top: 35px;
+
+    a {
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      padding-right: 10px;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: none;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .social-media-icons {
+      @include justify-content(flex-start); 
+    }
+  }
+}
+
+#footer-full-size{
+  text-transform: capitalize;
+  margin: 0 -27px;
+}
+
+#footerReleaseNumber{
+	width: 22px;
+  height: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.83;
+  letter-spacing: 0.7px;
+  text-align: right;
+  color: white;
+  padding-right: 65px;
+  padding-top: 15px;
+  float: right;
+}
+
+.footerRN {
+	background-color: $blue;
+	height: 40px;
+}
+
+.logo-footer {
+ 	margin-top:-84px;
+	margin-right:5%;
+	float: right;
+}
+
+.logoFt {
+	margin-top:1.5px;
+}
+
+

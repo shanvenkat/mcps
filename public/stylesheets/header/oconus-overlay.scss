@@ -1,0 +1,50 @@
+#mos-oconus-menu{
+  @extend .fullscreen-overlay;
+  padding: 0;
+  overflow-y: auto;
+  background: white;
+
+  .icon-button{
+    background-color: transparent;
+	  border: 0;
+    z-index: 1;
+    
+    .red-line{
+      width: 32px;
+      height: 6px;
+      background-color: $red;
+    }
+
+    p{ 
+	  font-family: 'Work Sans', sans-serif;
+      font-size: 0.5625rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: right;
+      color: $red;
+      padding-top: 12.3px;
+      text-align: center;
+    }
+    
+    &.top-right{
+      position: fixed;
+      right: 42px;
+      top: 39px;
+      width: auto;
+      color: black;
+    }  
+  }
+
+  &.visible{
+    display: block;
+  }
+  .oconus-overlay-links {
+    margin-top: 110px;
+    text-align: center;
+    .link-container {
+      display: block;
+      margin-bottom: 57px;
+    }
+  }
+}

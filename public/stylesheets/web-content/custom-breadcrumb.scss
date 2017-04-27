@@ -1,0 +1,26 @@
+/* css for breadcrumb implemented in article web content template*/
+.aui .custom-breadcrumb-container {
+  margin-top: 40px;
+	padding: 0 40px;
+  .custom-breadcrumb{
+      margin: 0 auto; 		
+      max-width: 1170px;
+      padding-bottom: 8px;
+      border-bottom: solid 1px $pale-grey-four;
+      font-weight: 500;
+      font-size: 0.6875rem;
+      font-family: 'Work Sans', sans-serif;
+      color: $light-blue;
+      a{
+        color: $light-blue;
+      }
+      
+      .divider{
+        padding: 0 5px;
+        font-weight: 500;
+        font-size: 0.6875rem;
+        font-family: 'Work Sans', sans-serif;
+        color: $light-blue;
+      }
+  }
+}

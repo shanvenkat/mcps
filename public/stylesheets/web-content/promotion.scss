@@ -1,0 +1,46 @@
+.portlet-journal-content .mos-promo {
+  @extend .image-background.cover;
+  @include flex;
+  @include align-items(center);
+  @include justify-content(space-around);
+  @include flex-direction(column);
+  min-height: 370px;
+  padding: 0 10%;
+  margin: 30px 23% 0 10%;
+  box-sizing: border-box;
+
+  .title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.2;
+    color: white;
+    width: 100%;
+    margin: 15% 0;
+  }
+
+  .text {
+    font-family: 'Arvo', serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: white;
+    width: 100%;
+    margin: 20% 0;
+    a {
+      color: white;
+      font-weight: bold;
+      &:hover, &:focus {
+        color: white;
+        border-bottom: solid $red 2px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+	.portlet-journal-content .mos-promo {
+	  margin: 0 8% 80px;
+	}
+}

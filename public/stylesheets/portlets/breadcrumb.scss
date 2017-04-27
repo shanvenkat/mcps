@@ -1,0 +1,50 @@
+.aui .portlet-breadcrumb{
+  @extend .remove-side-margins;
+  padding: 40px 48px 15px;
+
+  .hidden-phone{
+    @include flex;
+    @include justify-content(center);
+  }
+
+  .breadcrumb {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border-bottom: solid 2px rgb(234, 237, 249);
+    padding-bottom: 10px;
+    max-width: 970px;
+    width: 100%;
+    
+    .active {
+      color: $light-blue;
+      text-shadow: none;
+    }
+
+    a{
+      color: $light-blue;
+      text-shadow: none;
+    }
+
+    li{
+      font-weight: 500;
+      font-size: 0.6875rem;
+      font-family: 'Work Sans', sans-serif;
+
+      &.last{
+        display: none;
+      }
+      
+      .divider {
+        color: $light-blue;
+        text-shadow: none;
+      }
+
+      &:nth-child(2){
+        .divider{
+          display: none;
+        }
+      }
+    }
+  }
+}

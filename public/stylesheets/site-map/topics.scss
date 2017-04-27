@@ -1,0 +1,197 @@
+.aui .portlet-site-map .categories-section{
+	.category-tiles{
+		@include flex;
+		@include flex-wrap(wrap);
+		margin: -15px;
+
+		.category-tile{
+			@include transition(all, 400ms, ease);
+			@include flex;
+			@include flex-direction(column);
+			@include justify-content(space-between);
+			height: 280px;
+			box-sizing: border-box;
+			background-color: white;
+			padding: 40px;
+			margin: 15px;
+			text-decoration: none;
+			box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+			
+			h3{
+				@include transition(all, 400ms, ease);
+				font-family: 'Work Sans', sans-serif;
+				font-size: 1.25rem;
+				font-weight: 800;
+				line-height: 1.2;
+				color: $light-blue;
+			}
+
+			.detail{
+				@include transition(all, 400ms, ease);
+				font-family: 'Work Sans', sans-serif;
+				font-size: 0.75rem;
+				font-weight: 800;
+				letter-spacing: 0.5px;
+				color: white;
+				visibility: hidden;
+				text-transform: uppercase;
+			}
+
+			.topic-img{
+				@extend .image-background.cover;
+				@include transition(all, 400ms, ease);
+				height: 110px;
+
+				&.topic-1{
+					background-image: url(../images/topics/service-member-blue.png);
+				}
+				&.topic-2{
+					background-image: url(../images/topics/family-blue.png);
+				}
+				&.topic-3{
+					background-image: url(../images/topics/moving-blue.png);
+				}
+				&.topic-4{
+					background-image: url(../images/topics/financial-blue.png);
+				}
+				&.topic-5{
+					background-image: url(../images/topics/education-blue.png);
+				}
+				&.topic-6{
+					background-image: url(../images/topics/health-blue.png);
+				}
+				&.topic-7{
+					background-image: url(../images/topics/recreation-blue.png);
+				}
+				&.topic-8{
+					background-image: url(../images/topics/leaders-blue.png);
+				}
+			}
+		}
+	}
+	a, a:hover, a:focus{
+		text-decoration: none;
+	}
+}
+
+
+.aui .portlet-site-map .categories-section{
+	.category-tiles{
+		.category-tile{
+			&:hover, &:focus{
+				h3{
+					color: white;
+				}
+
+				.detail{
+					visibility: visible;
+				}
+				
+				&.active{
+					background-color: $light-blue;
+					box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+				}
+
+				&.inactive{
+					background-color: $red;
+					box-shadow: 0 38px 43px 0 rgba(214, 64, 84, 0.25);
+				}
+
+				.topic-img{
+					height: 90px;
+
+					&.topic-1{
+						background-image: url(../images/topics/service-member.png);
+					}
+					&.topic-2{
+						background-image: url(../images/topics/family.png);
+					}
+					&.topic-3{
+						background-image: url(../images/topics/moving.png);
+					}
+					&.topic-4{
+						background-image: url(../images/topics/financial.png);
+					}
+					&.topic-5{
+						background-image: url(../images/topics/education.png);
+					}
+					&.topic-6{
+						background-image: url(../images/topics/health.png);
+					}
+					&.topic-7{
+						background-image: url(../images/topics/recreation.png);
+					}
+					&.topic-8{
+						background-image: url(../images/topics/leaders.png);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.aui.mobile.touch .portlet-site-map .categories-section{
+	.category-tiles{
+		.category-tile{
+				.detail{
+					visibility: visible;
+				}
+				&.active{
+					.tile-top{
+						h3{
+							color: $light-blue;
+						}
+					}
+					.tile-bottom{				
+						.detail{
+							color: $light-blue;
+						}
+					}
+					color: $light-blue;
+					background-color: white;
+					box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+				}
+				&.inactive{
+					.tile-top{
+						h3{
+							color: white;
+						}
+					}
+					color: white;
+					background-color: $red;
+					box-shadow: 0 38px 43px 0 rgba(214, 64, 84, 0.25);
+				}
+				.topic-img{
+				@extend .image-background.cover;
+				@include transition(all, 400ms, ease);
+				height: 110px;
+
+				&.topic-1{
+					background-image: url(../images/topics/service-member-blue.png);
+				}
+				&.topic-2{
+					background-image: url(../images/topics/family-blue.png);
+				}
+				&.topic-3{
+					background-image: url(../images/topics/moving-blue.png);
+				}
+				&.topic-4{
+					background-image: url(../images/topics/financial-blue.png);
+				}
+				&.topic-5{
+					background-image: url(../images/topics/education-blue.png);
+				}
+				&.topic-6{
+					background-image: url(../images/topics/health-blue.png);
+				}
+				&.topic-7{
+					background-image: url(../images/topics/recreation-blue.png);
+				}
+				&.topic-8{
+					background-image: url(../images/topics/leaders-blue.png);
+				}
+			}
+		}
+	}
+}

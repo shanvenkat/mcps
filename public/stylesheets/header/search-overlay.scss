@@ -1,0 +1,138 @@
+.aui #mos-search{
+  @extend .fullscreen-overlay;
+  padding: 290px 0;
+  overflow-y: auto;
+  background: white;
+
+  form .fieldset{
+    input, input.input-large, textarea, .uneditable-input{
+  		max-width: initial !important;
+  	}
+  }
+
+  .icon-button{
+    background-color: transparent;
+	border: 0;
+    
+    .red-line{
+      width: 32px;
+      height: 6px;
+      background-color: $red;
+    }
+    
+    p{ 
+	  font-family: 'Work Sans', sans-serif;
+      font-size: 0.5625rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: right;
+      color: $red;
+      padding-top: 12.3px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+	&.top-right{
+	 position: absolute;
+	 right: 42px;
+	 top: 39px;
+	 width: auto;
+	 color: black;
+    }  
+  }
+  
+  &.visible{
+    @include flex;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include flex-direction(column);
+  }
+
+  .heading{
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    color: $light-blue;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+  }
+
+  fieldset{
+  	max-width: 770px;
+  	margin: 0 auto;
+  	
+    div:first-child{
+      @include flex;
+      @include justify-content(center);
+      @include align-items(center);
+      display: inline-table;
+      white-space: nowrap;
+      width:100%;
+	  
+	  div:first-child{
+	    width: 100%;
+	  
+	    #_3_keywords{
+    	  height: 80px;
+    	  width: 100%;
+    	  max-width: 770px;
+    	  padding: 0 65px 0 50px;
+    	  border-radius: 100px;
+    	  background-color: $pale-grey-two;
+    	  font-family: 'Work Sans', sans-serif;
+    	  font-size: 1.25rem;
+    	  font-weight: 500;
+    	  color: $blue;
+    	  border: none;
+    	  box-shadow: none;
+    	  box-sizing: border-box;
+  	    }
+  	  }
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: $blue;
+  }
+
+	#_3_groupId{
+		display: none;
+	}
+
+  .search-container{
+    padding: 0 20px;
+    max-width: 100vw;
+    min-height: 275px;
+    box-sizing: border-box;
+  }
+
+  input[type=text]::-ms-clear {
+    display: none;
+  }
+
+  #search{
+    position: relative;
+    margin: auto 0 9px -65px;
+    height: 30px;
+  
+    &:hover,
+    &:focus,
+    &:active{
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .aui #mos-search{
+    padding: 100px 0;
+  }
+}

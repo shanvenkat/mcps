@@ -1,0 +1,167 @@
+.aui .portlet-polls-display{
+  .empire{
+    display: none;
+  }
+  
+  //Hides you've voted, sign in to vote, and only vote once messages
+  .alert-success, .alert-info, .alert-error { /*you've voted*/
+		display: none;
+	}
+
+  .section-heading{
+    @include align-items(flex-start);
+  }
+
+	p.subtitle-polling, .thank-you-vote{
+		margin: 0 0 74px;
+		width: 100%;
+	}
+
+	.thank-you-vote {
+		font-family: 'Arvo',serif;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: $blue;
+	}
+  
+  .polls-display{
+    @extend .remove-side-margins;
+    @include flex;
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+    @include flex-direction(column);
+    padding: 80px 8% 120px;
+    
+    form{
+      @include flex;
+      @include align-items(flex-start);
+      @include justify-content(flex-start);
+      @include flex-direction(column);
+      margin: 0;
+      width: 100%;
+    }
+
+    .fieldset.control-group{
+      width: 100%;
+    }
+
+    .control-group {
+      @include flex;
+      @include justify-content(flex-start);
+      @include align-items(flex-start);
+      @include flex-wrap(wrap);
+      margin: -15px;
+    }
+    
+    .control-group.field-wrapper{
+      width: 100%;
+    }
+
+    .control-group.field-wrapper, .fieldset.control-group{
+      @include flex-wrap(wrap);
+    }
+    
+    .topic{
+      @include flex;
+      @include flex-direction(row);
+      align-content: center;
+      height: 72px;
+      margin: 15px;
+      
+      &.topic-voted{
+        cursor: default;
+      }
+
+      .heart{
+        @include flex;
+        @include justify-content(center);
+        @include align-items(center);
+        padding: 24px 0 21px 0;
+        color: $medium-grey;
+        width: 72px;
+        height: 72px;
+        border: solid 6px $medium-grey;
+        border-radius: 72px;
+        box-sizing: border-box;
+      }
+
+      .description{
+        @include flex;
+        @include align-items(center);
+        @include justify-content(flex-start);
+        width: 155px;
+        padding: 18px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.6px;
+        line-height: 1.13;
+        font-weight: 800;
+        color: $light-blue;
+
+        .description-text{
+          width: 150px;
+        }
+      }
+      
+      .votes{
+        margin:0;
+        text-align: center;
+        font-weight: 700;
+      }
+      
+      label, .radio{
+        display: none;
+      }
+
+			.heart-voted{
+				color: $light-blue;
+				font-family: 'Work Sans', sans-serif;;
+				font-size: 1.125rem;
+        font-weight: 800;
+				line-height: 1;
+				letter-spacing: 0.6px;
+        padding: 24px 0;
+      }
+
+			.description-voted{
+				color: $light-blue;	
+			}
+    }
+  }    
+}
+
+@media (min-width: 767px) {
+	.aui .portlet-polls-display .polls-display{
+		.topic:hover, .topic:focus {
+      .icon-heart{
+        color: $light-blue;
+      }
+		}
+  
+    .topic:active .icon-heart, .topic .icon-heart:active{
+      color: $red;
+    }
+	}
+}
+
+@media (max-width: 450px){
+  .aui #mi .mi-container .mi-form-container{
+    width: 100%;
+
+    form{
+      width: 100%;
+
+      .custom-select, .custom-input{
+        width: 100%;
+
+        select, #installationText{
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}

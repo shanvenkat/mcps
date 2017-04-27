@@ -1,0 +1,42 @@
+@media print {  
+ 	a[href]:after {
+   	content: none !important;
+  }
+
+  .journal-content-article .mos-article {
+    .article-image-row {
+      display: none;
+    }
+
+    .pdf-print {
+      display: none;
+    }
+
+    .article-content .article-head .metadata {
+      .view-count {
+        display: none;
+      }
+
+      .seperator {
+        padding: 0 35px;
+        visibility: hidden
+      }
+    }
+  }
+
+  #mi {
+    display: none;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  .mos-header .header-section.right-header-section {
+    display: none;
+  }
+
+  .article-feedback {
+    display: none;
+  }
+}
