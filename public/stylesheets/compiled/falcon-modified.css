@@ -1,0 +1,264 @@
+/* based on the falcon theme repository ./css/custom.css; order matters. */
+/* line 2, ../precompiled/falcon-styles/overrides.scss */
+html.aui {
+  overflow-x: hidden; }
+
+/* line 6, ../precompiled/falcon-styles/overrides.scss */
+.aui body {
+  padding: 0;
+  overflow-x: hidden; }
+
+/* line 11, ../precompiled/falcon-styles/overrides.scss */
+.aui a:hover, .aui a:focus {
+  text-decoration: none;
+  outline: 0; }
+
+/* line 17, ../precompiled/falcon-styles/overrides.scss */
+.aui a.link-underline:focus, .aui a.link-underline:hover {
+  border-bottom: solid #d64054 2px; }
+
+/* line 22, ../precompiled/falcon-styles/overrides.scss */
+#content {
+  padding: 0 10px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+/* line 28, ../precompiled/falcon-styles/overrides.scss */
+.portlet-asset-publisher .asset-full-content .asset-content {
+  margin: 0; }
+
+/* line 33, ../precompiled/falcon-styles/overrides.scss */
+.aui .breadcrumb {
+  margin: 0; }
+
+/* line 39, ../precompiled/falcon-styles/overrides.scss */
+.aui .portlet-dockbar {
+  /* Uncomment below if dockbar/header are overlapping Liferay portlet configuration buttons */
+  /*margin-bottom: 100px;*/ }
+  /* line 43, ../precompiled/falcon-styles/overrides.scss */
+  .aui .portlet-dockbar .dockbar.navbar-static-top {
+    position: fixed;
+    z-index: 4; }
+
+/* line 51, ../precompiled/falcon-styles/overrides.scss */
+input[type=text]::-ms-clear {
+  display: none; }
+
+@media (max-width: 767px) {
+  /* line 58, ../precompiled/falcon-styles/overrides.scss */
+  #content.with-header.with-double-header {
+    position: relative;
+    top: 46px; } }
+/* line 67, ../precompiled/falcon-styles/overrides.scss */
+.portlet-column-content.empty {
+  padding: 0; }
+
+@media (min-width: 992px) {
+  /* line 2, ../precompiled/falcon-styles/typography.scss */
+  html.aui {
+    font-size: 16px; } }
+@media (max-width: 992px) {
+  /* line 7, ../precompiled/falcon-styles/typography.scss */
+  html.aui {
+    font-size: 15px; } }
+@media (max-width: 767px) {
+  /* line 12, ../precompiled/falcon-styles/typography.scss */
+  html.aui {
+    font-size: 14px; } }
+/* line 17, ../precompiled/falcon-styles/typography.scss */
+html.aui {
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  /* line 23, ../precompiled/falcon-styles/typography.scss */
+  html.aui h1 {
+    font-size: 2rem;
+    font-weight: normal; }
+  /* line 27, ../precompiled/falcon-styles/typography.scss */
+  html.aui h2 {
+    font-size: 1.75rem;
+    font-weight: normal; }
+  /* line 32, ../precompiled/falcon-styles/typography.scss */
+  html.aui h3 {
+    font-size: 1.5rem;
+    font-weight: normal; }
+  /* line 37, ../precompiled/falcon-styles/typography.scss */
+  html.aui h4 {
+    font-size: 1.25rem;
+    font-weight: normal; }
+  /* line 42, ../precompiled/falcon-styles/typography.scss */
+  html.aui p {
+    font-family: 'Arvo', serif;
+    font-size: 1rem;
+    font-weight: normal; }
+  /* line 47, ../precompiled/falcon-styles/typography.scss */
+  html.aui li {
+    font-family: 'Arvo', serif;
+    font-size: 1rem; }
+  /* line 51, ../precompiled/falcon-styles/typography.scss */
+  html.aui .emphasize-text {
+    font-weight: bold;
+    color: #153754; }
+  /* line 57, ../precompiled/falcon-styles/typography.scss */
+  html.aui .mos-text .h3 {
+    font-family: moristonblack;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    text-align: right;
+    color: #bb8d5e; }
+  /* line 66, ../precompiled/falcon-styles/typography.scss */
+  html.aui .page-heading {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3.75rem;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #194867; }
+  /* line 76, ../precompiled/falcon-styles/typography.scss */
+  html.aui .section-heading {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #194867;
+    text-transform: uppercase;
+    margin-bottom: 76px; }
+    /* line 88, ../precompiled/falcon-styles/typography.scss */
+    html.aui .section-heading .red-line {
+      width: 64px;
+      height: 6px;
+      background-color: #d64054;
+      margin-right: 15px;
+      margin-top: -5px; }
+  /* line 97, ../precompiled/falcon-styles/typography.scss */
+  html.aui .lead {
+    font-family: 'Arvo', serif;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 40px 0 80px 0; }
+    /* line 105, ../precompiled/falcon-styles/typography.scss */
+    html.aui .lead.blue {
+      color: #12334a; }
+    /* line 109, ../precompiled/falcon-styles/typography.scss */
+    html.aui .lead.light-blue {
+      color: #194867; }
+    /* line 113, ../precompiled/falcon-styles/typography.scss */
+    html.aui .lead.white {
+      color: white; }
+  /* line 118, ../precompiled/falcon-styles/typography.scss */
+  html.aui .center-text {
+    text-align: center; }
+
+/* line 3, ../precompiled/falcon-styles/backgrounds.scss */
+.aui .image-background.repeat {
+  background-repeat: repeat; }
+/* line 6, ../precompiled/falcon-styles/backgrounds.scss */
+.aui .image-background.cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%; }
+/* line 13, ../precompiled/falcon-styles/backgrounds.scss */
+.aui .gray-background {
+  background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0), rgba(25, 72, 103, 0.05)), radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5)); }
+
+/* line 2, ../precompiled/falcon-styles/inputs.scss */
+.aui button:focus {
+  outline: none; }
+/* line 6, ../precompiled/falcon-styles/inputs.scss */
+.aui .mos-button, .aui .filled-button {
+  text-transform: uppercase;
+  border: none; }
+  /* line 10, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-button .material-icons, .aui .filled-button .material-icons {
+    font-size: 32px; }
+/* line 15, ../precompiled/falcon-styles/inputs.scss */
+.aui .filled-button {
+  color: white;
+  border-radius: 100px;
+  padding: 8px 25px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: transform .3s ease-in-out; }
+  /* line 26, ../precompiled/falcon-styles/inputs.scss */
+  .aui .filled-button.blue {
+    background-color: #194867;
+    border: solid 2px #194867; }
+    /* line 30, ../precompiled/falcon-styles/inputs.scss */
+    .aui .filled-button.blue:hover {
+      background-color: #12334a; }
+  /* line 35, ../precompiled/falcon-styles/inputs.scss */
+  .aui .filled-button.white {
+    background-color: white;
+    border: solid 3px #dde4e8;
+    color: #194867; }
+  /* line 41, ../precompiled/falcon-styles/inputs.scss */
+  .aui .filled-button.red {
+    background-color: #d43e51; }
+    /* line 44, ../precompiled/falcon-styles/inputs.scss */
+    .aui .filled-button.red:hover {
+      background-color: #9f1c2a; }
+/* line 50, ../precompiled/falcon-styles/inputs.scss */
+.aui .mos-radiobutton {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  /* Hover and focus states */
+  /* Checked state */
+  /* Hover state whilst checked */
+  /* Disabled state */ }
+  /* line 54, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton input {
+    z-index: -1;
+    opacity: 0; }
+  /* line 59, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton .mos-indicator {
+    border: solid 4px #dde4e8;
+    background-color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; }
+  /* line 68, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton:hover input ~ .mos-indicator, .aui .mos-radiobutton input:focus ~ .mos-indicator {
+    background: #d64054; }
+  /* line 74, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton input:checked ~ .mos-indicator {
+    background: #d64054; }
+  /* line 79, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton:hover input:not([disabled]):checked ~ .mos-indicator, .aui .mos-radiobutton input:checked:focus ~ .mos-indicator {
+    background: #d64054; }
+  /* line 85, ../precompiled/falcon-styles/inputs.scss */
+  .aui .mos-radiobutton input:disabled ~ .mos-indicator {
+    pointer-events: none;
+    opacity: .6;
+    background: #d64054; }
+/* line 92, ../precompiled/falcon-styles/inputs.scss */
+.aui .close-beta-button {
+  background: transparent;
+  color: #d64054;
+  outline: none; }

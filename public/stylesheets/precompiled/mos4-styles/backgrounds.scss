@@ -1,0 +1,66 @@
+.aui{
+  .image-background{
+    &.repeat{
+      background-repeat: repeat;
+    }
+    &.cover{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
+  }
+
+  .gray-background{
+    background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0), rgba(25, 72, 103, 0.05)), radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5));
+  }
+
+  .blue-textured-overlay{
+    @extend .image-background.repeat;
+    background-image: url(../images/blue-textured.png);
+  }
+
+  .transparent-blue-textured-overlay{
+    @extend .blue-textured-overlay;
+    opacity: .95;
+  }
+
+  .darkblue-textured-overlay{
+    @extend .image-background.repeat;
+    background-image: url(../images/darkblue-textured.png);
+  }
+
+  .gold-textured-overlay{
+    @extend .image-background.repeat;
+    background-image: url(../images/gold-textured.png);
+  }
+
+  .mos-topic{
+    @extend .image-background.cover;
+    background-color: $blue;
+
+    &.topic1{
+      background-image: url(../images/topics/military-life.png);
+    }
+    &.topic2{
+      background-image: url(../images/topics/family.png);
+    }
+    &.topic3{
+      background-image: url(../images/topics/moving.png);
+    }
+    &.topic4{
+      background-image: url(../images/topics/financial-legal.png);
+    }
+    &.topic5{
+      background-image: url(../images/topics/education.png);
+    }
+    &.topic6{
+      background-image: url(../images/topics/health.png);
+    }
+    &.topic7{
+      background-image: url(../images/topics/recreation-travel.png);
+    }
+    &.topic8{
+      background-image: url(../images/topics/leaders-service-providers.png);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<script type="text/ng-template" id="view-header-search">
+    <div mi-search></div>
+</script>
+
+<script type="text/ng-template" id="input-band-search">
+      <div class="row">
+
+        <div class="col-md-1 col-xs-12 dropdown-filter-label">CHOOSE:</div>
+        <div class="col-md-4 col-xs-12">
+            <mi-typeahead-programs></mi-typeahead-programs>
+        </div>
+
+        <div class="col-md-1 col-xs-12 dropdown-filter-label">VIEW BY:</div>
+        <div class="col-md-2 col-xs-12">
+            <div class="input"
+                 dropdown-select="arroViewBy"
+                 dropdown-model="oViewBy"
+                 dropdown-item-label="type">
+            </div>
+        </div>
+
+        <div ng-show="oViewBy.type === 'Installation'">
+          <div class="col-md-1 col-xs-12 dropdown-filter-label">CHOOSE:</div>
+          <div class="col-md-3 col-xs-12">
+              <mi-typeahead-installations></mi-typeahead-installations>
+          </div>
+        </div>
+
+        <div ng-show="oViewBy.type === 'Zip Code'">
+          <input class="input col-md-2 col-xs-12" ng-model="MI.State.sZipCodeText" type="text">
+          <div class="col-md-1 col-xs-12 dropdown-filter-label margin-left-10">WITHIN:</div>
+          <div class="col-md-2 col-xs-12">
+              <div class="input"
+                   dropdown-select="arroMilesOptions"
+                   dropdown-model="MI.State.oMilesbySelected"
+                   dropdown-item-label="type">
+              </div>
+          </div>
+        </div>
+
+      </div>
+</script>
+
+<script type="text/ng-template" id="view-body-search">
+    <div class="row">
+        <div class="tags-outside-overlay" ng-show="iDisplayedFilterCount">
+            <div class="subheader">SHOWING FILTERED RESULTS BY</div>
+
+            <div class="filter-tags-container"
+                 ng-if="oFilter.sDisplayText"
+                 ng-model="arroFilters"
+                 ng-repeat="oFilter in arroFilters">
+                    <div class="tag" ng-click="oFilter.bActiveFilter = false">
+                        {{oFilter.sDisplayText}}
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div mi-card class="col-md-4 col-xs-12" ng-repeat="oCard in arroFilteredProgramCards" ng-if="bLazyLoadingDone">
+            Loading...
+        </div>
+    </div>
+</script>

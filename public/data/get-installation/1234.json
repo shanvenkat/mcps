@@ -1,0 +1,259 @@
+{
+  "id": 1234,
+  "name": "Marine Corps Base Quantico",
+  "majorBranch": "Marine Corps",
+  "primaryContact": {
+    "contactid": 22,
+    "firstName": "Taylor",
+    "lastName": "Swift",
+    "middle": "idk",
+    "organization": "Some Place",
+    "title": "singer",
+    "email": "hr@quantico.mil",
+    "website": "WEBSITE",
+    "progOrService": {
+      "name": "free pizza program",
+      "linkid": 198
+    },
+    "links": [
+      {
+        "type": "email",
+        "title": "EMAIL",
+        "link": "taylorswift@ftmeade.mil"
+      },
+      {
+        "type": "map",
+        "title": "MAP",
+        "link": "https://www.google.com/maps/place/Fort+Meade,+MD"
+      },
+      {
+        "type": "website",
+        "title": "WEBSITE",
+        "link": "http://www.ftmeade.army.mil/"
+      }
+    ],
+    "phone": [
+      {
+        "id": 1231,
+        "type": "primary",
+        "phoneNum": "123-456-4567",
+        "label": "Office Phone",
+        "contactid": 22
+      },
+      {
+        "id": 1232,
+        "type": "fax",
+        "phoneNum": "987-789-0986",
+        "label": "Office Fax",
+        "ext": "#1234",
+        "contactid": 23
+      }
+    ],
+    "address": {
+      "id": 117,
+      "addressline1": "711 SomePlace Rd",
+      "addressline2": null,
+      "addressline3": null,
+      "addressline4": null,
+      "city": "Quantico",
+      "stateId": {
+        "stateId": 20,
+        "stateAbbr": "VA",
+        "stateName": "Virginia"
+      },
+      "province": null,
+      "zip5": "78626",
+      "zip4": "-0012",
+      "countryId": {
+        "countryId": 1,
+        "countryAbbr": "USA",
+        "countryName": "United States of America"
+      },
+      "name": "Fort Belvoir Mailing Address",
+      "contactid": 22
+    }
+  },
+  "sections": [
+    {
+      "title": "Mission",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "History",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "Population",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "Location",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "Direction",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "Special & critical installation message",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ],
+  "categories": [
+    {
+      "title": "Children & Youth",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/child.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Education",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/education.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "EFMP",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/efmp.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": "efmp"
+      },
+      "associatedLinks": [
+        {
+          "text": "Find information on air travel.",
+          "title": "Traveling Tips for Persons with Disabilities",
+          "link": "/"
+        }, {
+          "text": "Provides useful practical information for families with Autism Spectrum Disorders.",
+          "title": "Education Directory for Children with Special Needs",
+          "link": "/"
+        }
+      ],
+      "id": 89,
+      "pageTitle": "EFMP Program",
+      "sections": [
+        {
+          "title": "",
+          "text": "When you're moving, your to-do list can seem long enough to fill a packing box. But if your family has special medical or educational needs, help is available before, during and after your move. Enrollment in the Exceptional Family Member Program provides military families with special needs consideration during the assignment process and access to support services to help navigate the medical and educational system."
+        },
+        {
+          "title": "Who should enroll in the program?",
+          "text": "Family members with special medical or educational needs should enroll in the EFMP including spouses, children and dependent adults who:<ul><li>Require special medical services for a chronic condition such as asthma, attention deficit disorder, diabetes, multiple sclerosis, etc.</li><li>Receive ongoing services from a medical specialist</li><li>Have significant behavioral health concerns</li></ul>"
+        },
+        {
+          "title": "Why enroll in the program?",
+          "text": "Because it's a good idea."
+        },
+        {
+          "title": "What is assignment coordination?",
+          "text": "I'm not sure."
+        },
+        {
+          "title": "How do families enroll in the program?",
+          "text": "Bacon ipsum dolor amet short ribs tongue t-bone, bresaola shoulder sausage shankle jowl pork chop ribeye pork pork belly bacon andouille. Spare ribs tenderloin frankfurter drumstick shank boudin sirloin ball tip corned beef chuck jowl meatball sausage tri-tip shankle. Burgdoggen doner turkey venison meatloaf biltong alcatra shoulder boudin salami bacon jerky. Ground round pork chop short ribs beef, picanha venison t-bone jowl."
+        }
+      ],
+      "topics": [
+        {
+          "name": "Preparing For Your Move",
+          "nav": "preparing-for-your-move",
+          "id": 112,
+          "associatedLinks": []
+        },
+        {
+          "name": "Education Directory",
+          "nav": "education-directory",
+          "id": 111,
+          "associatedLinks": []
+        },
+        {
+          "name": "Health Care / Special Needs",
+          "nav": "health-care",
+          "id": 113,
+          "associatedLinks": []
+        },
+        {
+          "name": "Special Education",
+          "nav": "special-education",
+          "id": 126,
+          "associatedLinks": [
+            {
+              "text": "TRICARE",
+              "title": "Find out everything you need to know about your medical benefits.",
+              "link": "/"
+            }, {
+              "text": "Provides a list of State Part C directors and programs.",
+              "title": "National Early Childhood Technical Assistance Center",
+              "link": "/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family Center",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/family.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Financial & Legal",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/financial.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Health",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/health.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Housing",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/housing.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Moving",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/moving.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    },
+    {
+      "title": "Transportation",
+      "text": "The first sentence will go here. The second sentence will go here. The third sentence will go here.",
+      "image": "/views/milinstall/images/categories/transportation.svg",
+      "link": {
+        "name": "LINK TO PAGE",
+        "nav": ""
+      }
+    }
+  ],
+  "allContacts": null,
+  "from": null,
+  "to": null
+}

@@ -1,0 +1,99 @@
+/* kind-of-common */
+.page {
+  height: initial;
+}
+/* kind-of-common */
+
+.search-for-installation {
+  display: inline-block;
+}
+
+.search-for-installation {
+  float: right;
+}
+
+.installations-container {
+  padding: 4% 8%;
+}
+
+.red {
+  color: red;
+  cursor: pointer;
+}
+
+.region-label,
+.toggle-option {
+  border-bottom: 2px solid transparent;
+  color: #194867;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 2.5%;
+}
+
+.toggle-option.selected {
+  padding-bottom: 14px;
+  border-bottom: 6px solid #d64054;
+}
+
+.branch-of-service {
+  background: #eff4f7;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: 50px;
+  margin-top: -10px;
+}
+
+.branch-of-service * {
+  vertical-align: middle;
+}
+
+.branch-of-service .text {
+  padding: 20px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #194867;
+}
+
+.app-icon.branch-icon-container {
+  position: relative;
+  right: 0;
+  background: url("/images/radial-icon-container-right.svg");
+  display: inline-block;
+  height: 100%;
+  padding: 5px 10px;
+  width: 52px;
+}
+
+.arvo {
+  font-family: Arvo;
+  color: #194867;
+  margin: -1.5% 0 3% 1.35%;
+}
+
+.installations-in-region div {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color: #12334a;
+}
+
+/* branches overlay style */
+.overlay.branch-filter-overlay .popup-window.fullscreen .popup-text {
+  padding: 6% 8vw;
+}
+
+.subheader {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  color: #194867;
+}
+
+.clear-all {
+  margin-right: 12%;
+}

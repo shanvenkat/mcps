@@ -1,0 +1,49 @@
+<!-- TODO: can we get JS and/or CSS here? -->
+<!-- <script src="sGetFromResolveAndGenericController" /> -->
+
+<!-- base view layout -->
+<div class="component-root {{sViewName}}">          <!-- .ng-scope -->
+
+    <div class="view-header">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="back-link"
+                     ng-show="bShowBackLink">
+                  <i class="ion-android-arrow-back back-arrow" 
+                     ng-click="MI.$window.history.back()"/>
+                  <span class="back-text"
+                     ng-click="MI.$window.history.back()">BACK</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-super-title">{{sViewSuperTitle}}</div>
+        <div class="view-title">{{sViewTitle}}</div>
+
+        <ng-include class="view-header-additional-content" src="'view-header-' + sViewName"></ng-include>
+    </div>
+
+    <div class="container-fluid view-body">                                         <!-- children should have class="row" -->
+      <ng-include class="input-band row" src="'input-band-' + sViewName"></ng-include>  <!-- children should have class="row" -->
+      <div class="print-button" ng-show="bShowPrintButton"></div>
+      <ng-include src="'view-body-' + sViewName"
+                  ng-class="sViewName + '-body'"></ng-include>                      <!-- children should have class="row" -->
+    </div>
+</div>
+
+<!-- common templates -->
+<!-- todo: uncomment once index.html and main.html use common.html
+<script type="text/ng-template" id="looking-for">
+  <div class="row space-between">
+      <div class="col-md-3 col-sm-12 col-xs-12 search-text">
+          I'm looking for a
+      </div>
+      <div class="col-md-9 col-sm-12 col-xs-12">
+          <div dropdown-select="oLookingForOptions"
+               dropdown-model="oLookingForSelection"
+               dropdown-item-label="type">
+          </div>
+      </div>
+  </div>
+</script>
+-->

@@ -1,0 +1,213 @@
+.page {
+    height: auto;
+}
+
+
+/** view header **/
+
+.categories .view-header {
+    color: #194867;
+    font-weight: bold;
+    width: 100%;
+    padding: 9% 6% 5%;
+    background: transparent url("/images/mi-header.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.categories .title {
+    font-size: 32px;
+    padding-top: 19px;
+    line-height: 1.25;
+}
+
+.categories .view-body .row {
+    background-color: #f8f9fd;
+    padding: 1.5% 6%;
+}
+
+.categories .card {
+    background-color: #ffffff;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    clear: left;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.categories .card-header {
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: 0.3px;
+    color: #194867;
+}
+
+.categories .nav-link {
+    color: #b92131;
+}
+
+.categories uib-accordion:not(.hiddenheader) .section {
+    margin-top: 30px;
+}
+
+.categories .section .section-title,
+.categories .section .panel-heading span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #194867;
+    margin-bottom: 20px;
+}
+
+.categories .section .panel-default>.panel-heading,
+.categories .section .panel {
+    background-color: transparent;
+    border: none;
+}
+
+.categories uib-accordion.section:not(.hiddenheader) .panel-heading {
+    border-bottom: 2px solid #dde4e8;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.categories uib-accordion.section:not(.hiddenheader) .panel-heading .panel-title:after {
+    color: #194867;
+    content: "\E315";                                   /* arrow right */
+    float: right;
+    font-family: 'Material Icons';
+    font-size: 22px;
+}
+
+.categories uib-accordion.section:not(.hiddenheader) .panel.panel-open .panel-heading .panel-title:after {
+    content: "\E313";                                   /* arrow down */
+}
+
+.categories uib-accordion.section:not(.hiddenheader) .panel-body {
+    background-color: #f0f2fa;
+    border-top: none;
+    padding: 30px;
+}
+
+.categories uib-accordion.section.hiddenheader .panel-body {
+    border: none;
+    padding: 0;
+}
+
+.categories .hiddenheader .section.panel {
+    box-shadow: none;
+}
+
+.categories .section .section-text {
+    font-family: Arvo;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4a4a4a;
+}
+
+.categories .categories {
+    padding: 7% 9% 3% 8%;
+    background-color: #ffffff;
+}
+
+.categories .categories-wrapper {
+    margin-top: 50px;
+}
+
+.categories .category {
+    margin-bottom: 50px;
+}
+
+.categories .category-image {
+    margin-right: 30px;
+}
+
+.categories .category-content {
+    width: 70%;
+}
+
+.categories .category-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #194867;
+}
+
+.categories .category-text {
+    font-family: Arvo;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #194867;
+}
+
+.categories .category-link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.71;
+    color: #b92131;
+    cursor: pointer;
+}
+
+.card .category-item {
+    background-color: #194867;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card .topic-item {
+    color: #194867;
+    padding: 20px;
+    border-bottom: 2px solid #DCE3E8;
+    cursor: pointer;
+}
+
+.card .topic-item:last-child {
+    border: none;
+}
+
+.associated-link-section {
+    margin-top: 30px;
+}
+
+.associated-link-section .ion-android-arrow-forward {
+    color: #b92131;
+    margin-right: 5px;
+}
+
+.associated-link-title {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.associated-link-text {
+    color: #4a4a4a;
+    font-family: Arvo;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.71;
+    margin-top: 5px;
+}
+
+.categories .view-body .row.associated-link-row {
+    background-color: white;
+    box-shadow: 0 10px 43px 0 rgba(25, 72, 103, 0.15);
+    padding: 6%;
+}
+
+@media (min-width: 992px) {
+    .associated-link-text {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .associated-link-section .ion-android-arrow-forward {
+        display: none;
+    }
+}
+
+.hiddenheader .panel-heading {
+    display: none;
+}

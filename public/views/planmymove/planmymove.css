@@ -1,0 +1,104 @@
+.component-root.planmymove {
+    background: transparent url("./pmm-herobg.png") no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    padding: 13% 9% 5% 9%;
+}
+
+.page {
+    height: auto;
+}
+
+.planmymove .intro-section {
+    font-family: Arvo;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: -0.2px;
+    color: #194867;
+}
+
+.planmymove .sub-intro-section {
+    margin-top: 30px;
+}
+
+.planmymove .form-wrapper {
+    margin: 6% 8% 0 8%;
+}
+
+.planmymove .form-section {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #194867;
+    margin-bottom: 30px;
+}
+
+.planmymove input.input {
+    background-image: none;
+}
+
+.planmymove .subsection-link {
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-align: right;
+    color: #194867;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.planmymove .member-type {
+    font-size: 20px;
+    font-weight: 500;
+    color: #194867;
+}
+
+.planmymove .member-type > span {
+    margin-right: 55px;
+}
+
+/** override bootstrap label font-weight **/
+.planmymove .member-type > span > label {
+    font-weight: 500;
+}
+
+.planmymove input[type="radio"] {
+    display: none;
+}
+
+.planmymove input[type="radio"] + label span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: -2px 20px 0 0;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 0 rgba(25, 72, 103, 0.19);
+    border: solid 4px #b2bcc3;
+}
+
+.planmymove input[type="radio"]:checked + label span {
+    background-color: #d43e51;
+}
+
+.planmymove .checklist-section {
+    margin-top: 55px;
+}
+
+.planmymove .checklist-button {
+    border-radius: 50px;
+    background-color: #a2b5c1;
+    width: 44%;
+    padding: 2%;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+}
+
+.planmymove .checklist-button.active {
+    background-color: #d43e51;
+    box-shadow: 0 30px 43px 0 rgba(212, 62, 81, 0.24);
+}

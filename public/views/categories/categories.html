@@ -1,0 +1,73 @@
+<script type="text/ng-template" id="view-header-categories">
+    <div class="row">
+        <div class="col-md-9 col-sm-12 title">
+            {{MI.State.oCategory.name}}
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="input-band-categories"></script>        <!-- TODO: I shouldn't have to include an empty tag -->
+
+<script type="text/ng-template" id="view-body-categories">
+    <div class="row">
+        <!-- left section -->
+        <div class="col-md-3 col-sm-6">
+            <span class="left-section-header">MAIN CONTACT INFO</span>
+
+            <div mi-card
+                 ng-repeat="oCard in [MI.State.oMassagedInstallation]">
+              Loading...
+            </div>
+
+            <span class="left-section-header">
+                TOPICS
+            </span>
+            <div class="card padding-0">
+                <div class="category-item"
+                     ng-click="fNavigateToTopic()">
+                    {{MI.State.oCategory.pageTitle}}
+                </div>
+                <div class="topic-item"
+                     ng-click="fNavigateToTopic('/' + oTopic.nav)"
+                     ng-repeat="oTopic in MI.State.oPageData.topics"
+                     ng-show="MI.State.oPageData.topics">
+                    {{oTopic.name}}
+                </div>
+            </div>
+        </div>
+
+        <!-- right section -->
+        <div class="col-md-9 col-sm-6">
+            <div class="section-header no-bar">{{MI.State.oPageData.pageTitle}}</div>
+
+            <uib-accordion close-others="oneAtATime"
+                           class="section"
+                           ng-class="{hiddenheader: !oSection.title}"
+                           ng-repeat="oSection in MI.State.oPageData.sections">
+              <div uib-accordion-group
+                   class="section panel-default"
+                   heading="{{oSection.title}}"
+                   is-open="bOpen"
+                   ng-init="bOpen = !oSection.title">
+                <div class="section-text" ng-bind-html="oSection.text | unsafe"></div>  <!-- html so we can have line breaks and lists -->
+              </div>
+            </uib-accordion>
+        </div>
+        <!-- right section -->
+    </div>
+
+    <div class="row associated-link-row">
+        <div class="col-md-6 col-xs-12 section-header">
+            {{MI.State.oPageData.pageTitle.toUpperCase()}} ASSOCIATED LINKS
+            <div class="associated-link-section"
+                 ng-repeat="oAssociatedLink in MI.State.oPageData.associatedLinks">
+
+                <i class="ion-android-arrow-forward" />
+                <div class="associated-link-title"
+                     ng-click="fHandleAssociatedLinkClick(oAssociatedLink.link)">{{oAssociatedLink.title}}
+                </div>
+                <div class="associated-link-text">{{oAssociatedLink.text}}</div>
+            </div>
+        </div>
+    </div>
+</script>

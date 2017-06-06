@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ALL",
+    "name": "ALL"
+  }, {
+    "id": "44",
+    "name": "Chapels"
+  }, {
+    "id": "43",
+    "name": "Beauty/Barber Shops"
+  }, {
+    "id": "42",
+    "name": "Barracks/Single Service Member Housing"
+  }, {
+    "id": "41",
+    "name": "Automotive Services"
+  }, {
+    "id": "40",
+    "name": "Legal Services/JAG"
+  }, {
+    "id": "39",
+    "name": "Household Goods/Transportation Office (outbound)"
+  }, {
+    "id": "31",
+    "name": "Youth Programs/Centers"
+  }
+]

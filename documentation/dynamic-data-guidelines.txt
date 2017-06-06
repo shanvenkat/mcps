@@ -1,0 +1,21 @@
+Definition of Dynamic, from a UI perspective: Dynamic content is content which must be constructed at run time based on data called and received at run time.
+
+Notice that this does not include server-side rendering, or anything coming out of a build process. So it does not mean “any content generated from the database or another data source.”
+
+Benefits of dynamic content:
+1.	Users can edit things without needing to know how to code. Eg, through a CMS GUI.
+2.	Can improve performance through lazy loading.
+
+Costs of dynamic content:
+1.	Generally reduces performance (lazy loading only fits certain use cases)
+2.	Increases UI development time
+3.	It complicates the software model on both sides (overengineering)
+
+So it’s not always best to make any particular element dynamic or static. There are certain situations which make one ideal.
+
+The key discriminator is whether there is a functional requirement to make something dynamic. That is, will users actually want to update elements in the set? For example, users will not need to update the list of the 50 states. Making that dynamic would waste developer time and gain no benefit in exchange.
+
+Blog articles and users, on the other hand, should be dynamic. These will need to be created and updated.
+
+Something like the links in the footer might be in between. They may want to eventually update it, but how frequently do they actually do this? If they want to update a single link every year or two it might be fine to leave it as HTML and let a maintenance team take care of it, instead of complicating the model and incurring performance problems and increased development time.
+

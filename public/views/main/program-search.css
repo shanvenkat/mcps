@@ -1,0 +1,198 @@
+.top-right{
+    position: absolute;
+    right: 100px;
+    top: 111px;
+    width: auto;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.5625rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: right;
+    padding-top: 12.3px;
+    text-align: center;
+    text-transform: uppercase;
+ }
+
+.prg-redbutton{
+ margin:10px;
+ color:red;
+
+}
+.program-modal .modal-dialog {
+    height: 90%;
+    width: 90%;
+}
+
+.program-modal .modal-dialog .modal-content {
+    height: 100%;
+    width: 100%;
+}
+
+.program-modal-container {
+    margin: 40px 44px 79px 115px;
+    height: 100%;
+}
+
+.program-modal-container .program-modal-header {
+    display: block;
+    float: right;
+    font-family: 'Work Sans';
+
+}
+
+.program-modal-container .program-modal-header > a:focus,
+.program-modal-container .program-modal-header > a:hover {
+    text-decoration: none;
+}
+
+.program-modal-container .modal-close {
+    font-size: 10px;
+    font-weight: 800;
+    color: #d64054;
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+.prg-rectangle {
+ display: inline;
+    float: left;
+    width: 30px;
+    height: 6px;
+    background-color: #d64054;
+    margin:65px;
+     float: left;
+    width: 31px;
+    height: 6px;
+    background-color: #d64054;
+ }
+
+.prg-title{
+    min-width: 17%;
+    height: 14px;
+    font-family: 'Work Sans';
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #12334a;
+    text-align: left;
+    margin-top: 60px;
+}
+.prg-parent{
+    display: flex;
+}
+
+.prg-column-display{
+   column-count: 3;
+    margin: 60px;
+    font-family: 'Work Sans';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px
+ letter-spacing: 0px;
+    color: #12334a;
+}
+
+.prg-stripe {
+  width: 1170px;
+  height: 3px;
+  object-fit: contain;
+  background-color: #dde4e8;
+  margin: 20px;
+}
+
+.prg-search-textbox{
+    position: absolute;
+    height: 67px;
+    width: 670px;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 45px;
+    border: 0px;
+    margin-left: 237px;
+    margin-bottom: 9px;
+    margin-top: -67px;
+}
+.prg-glasssearch{
+    /*
+    position: absolute;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: -160px;
+    margin-right: 208px;
+    */
+    position: absolute;
+    cursor: pointer;
+    font-size: 25px;
+    top: -105px;
+    left: 1120px;
+}
+
+.programs-overlay-searchbar {
+    background: #eff4f7;
+    border-radius: 100px;
+    margin-top: -39px;
+    margin-left: 373px;
+    background-color: #ffffff;
+    height: 70px;
+    width: 720px;
+    cursor: pointer;
+}
+.prg-glass{
+    float: right;
+    margin: 25px 40px;
+  
+}
+
+.prg-inputbox{
+    width: 650px;
+    height: 80px;
+    display: inline-block;
+    position: absolute;
+    background-color: #ffffff;
+    background: #eff4f7;
+    border-radius: 100px;
+    margin-left: auto;
+}
+
+}
+.participant-list {
+    height: 800px;
+}
+
+.participant {
+    margin: 5px 0px;
+    padding: 2px 0px;
+    cursor: pointer;
+}
+
+.prg-search{
+      width: 23px;
+      height: 30px;
+      font-family: 'Ionicons';
+      font-size: 30px;
+      color: #194867;
+      color: var(--dark-slate-blue);
+    }
+
+.search-for-installation {
+        display: inline-block;
+}
+
+
+.page {
+    height: auto;
+}
+
+.milinstall .header {
+    color: #194867;
+    font-weight: bold;
+    width: 100%;
+    padding: 9% 8% 5%;
+    background-size: 100% 100%;
+}
+

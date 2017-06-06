@@ -1,0 +1,35 @@
+.footer {
+  background-image: linear-gradient(to top, rgba(25, 72, 103, 0), rgba(15, 43, 62, 0.5)), linear-gradient(#194867, #194867);
+  color: white;
+}
+
+.footer .subfooter {
+  background-color: #12334a;
+  height: 40px;
+}
+
+.footer .footer-nav {
+  width: 80%;
+}
+
+.version-number {
+  font-weight: bold;
+  float: right;
+  margin: 10px 25px;   /* horizontal margin important for ie scrollbar */
+}
+
+.footer .nav-title {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 80px 0 20px;
+}
+
+.footer .nav-body {
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+
+.nav-body > div {
+  margin-bottom: 25px;
+}

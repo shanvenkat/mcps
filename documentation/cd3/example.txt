@@ -1,0 +1,32 @@
+Comp name:              State Landing Page
+Comp url:               https://app.zeplin.io/project/58ebcc1b3159024b586144cb/screen/59011966c93cf60eeb1bf818
+Associated feature(s):  state-landing-page
+
+
+Supported Requests
+------------------
+#     Endpoint                             Type
+01    /data/states                         GET
+02    /data/states/{id}                    GET
+03    /data/states/{id}/facilities         GET
+04    /data/states/{id}/facilities/{id}    GET
+05    /data/states/{id}/facilities/{id}    PUT
+06    /data/states/{id}/facilities/{id}    POST
+07    /data/states/{id}/facilities/{id}    DELETE
+
+Sample Request and Response Bodies
+01 - Request: no body
+01 - Response:
+{
+  states: [
+    {
+      name: "Arkansas",
+      code: "AR",
+      powerlevel: 50
+    },{
+      name: "Arkansas",
+      code: "AR",
+      powerlevel: 50
+    }
+  ]
+}

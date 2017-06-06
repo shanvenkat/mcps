@@ -1,0 +1,32 @@
+.page {
+  height: initial
+}
+
+.dropdown-filter-label {
+  color: #194867;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2.33;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 992px) {
+    .dropdown-filter-label {
+        padding: 0;
+        padding-top: 1.2%;
+        width: 5%;
+    }
+
+    .component-root input.input.col-md-2 {
+      width: 16.66666667%;
+    }
+}
+
+.input-band .row {
+  padding: 4%;
+}
+
+.search-body {
+    padding: 4% 8%;
+}

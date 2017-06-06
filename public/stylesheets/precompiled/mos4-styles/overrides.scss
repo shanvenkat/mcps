@@ -1,0 +1,69 @@
+//Portal Normal
+html.aui{
+  overflow-x: hidden;
+}
+
+.aui body{
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.aui a:hover, .aui a:focus{
+	text-decoration: none;
+	outline: 0;
+}
+
+.aui a.link-underline{
+	&:focus, &:hover{
+		border-bottom: solid $red 2px;
+	}
+}
+
+#content{
+  padding: 0 10px;
+  @include transition(all, 0.3s, ease);
+}
+
+//Asset Publisher Portlet
+.portlet-asset-publisher .asset-full-content .asset-content{
+  margin: 0;
+}
+
+//Breadcrumb Portlet
+.aui .breadcrumb{
+  margin: 0;
+}
+
+// Dockbar
+.aui{
+	.portlet-dockbar{
+		/* Uncomment below if dockbar/header are overlapping Liferay portlet configuration buttons */
+		/*margin-bottom: 100px;*/
+	
+		.dockbar.navbar-static-top{
+			position: fixed;
+			z-index: 4;
+		}
+	}
+}
+
+//Removes clear button on IE from all inputs
+input[type=text]::-ms-clear{
+	display: none;
+}
+
+@media (max-width: 767px){
+	#content{
+		&.with-header{
+			&.with-double-header{
+				position: relative;
+				top: 46px;
+			}
+		}
+	}
+}
+
+// Empty rows in nested portlets
+.portlet-column-content.empty{
+	padding: 0;
+}

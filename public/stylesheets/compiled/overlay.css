@@ -1,0 +1,192 @@
+/* line 3, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .image-background.repeat, .aui .blue-textured-overlay, .aui .transparent-blue-textured-overlay, .aui .overlay .popup-background, .overlay .aui .popup-background, .aui .darkblue-textured-overlay, .aui .gold-textured-overlay {
+  background-repeat: repeat; }
+/* line 6, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .image-background.cover, .aui .mos-topic {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%; }
+/* line 13, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .gray-background {
+  background-image: linear-gradient(to bottom, rgba(25, 72, 103, 0), rgba(25, 72, 103, 0.05)), radial-gradient(circle at 51% 47%, rgba(255, 255, 255, 0.5), rgba(225, 229, 245, 0.5)); }
+/* line 17, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .blue-textured-overlay, .aui .transparent-blue-textured-overlay, .aui .overlay .popup-background, .overlay .aui .popup-background {
+  background-image: url(../images/blue-textured.png); }
+/* line 22, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .transparent-blue-textured-overlay, .aui .overlay .popup-background, .overlay .aui .popup-background {
+  opacity: .95; }
+/* line 27, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .darkblue-textured-overlay {
+  background-image: url(../images/darkblue-textured.png); }
+/* line 32, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .gold-textured-overlay {
+  background-image: url(../images/gold-textured.png); }
+/* line 37, ../precompiled/mos4-styles/backgrounds.scss */
+.aui .mos-topic {
+  background-color: #12334a; }
+  /* line 41, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic1 {
+    background-image: url(../images/topics/military-life.png); }
+  /* line 44, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic2 {
+    background-image: url(../images/topics/family.png); }
+  /* line 47, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic3 {
+    background-image: url(../images/topics/moving.png); }
+  /* line 50, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic4 {
+    background-image: url(../images/topics/financial-legal.png); }
+  /* line 53, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic5 {
+    background-image: url(../images/topics/education.png); }
+  /* line 56, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic6 {
+    background-image: url(../images/topics/health.png); }
+  /* line 59, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic7 {
+    background-image: url(../images/topics/recreation-travel.png); }
+  /* line 62, ../precompiled/mos4-styles/backgrounds.scss */
+  .aui .mos-topic.topic8 {
+    background-image: url(../images/topics/leaders-service-providers.png); }
+
+/* line 8, ../precompiled/overlay.scss */
+.overlay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3; }
+  /* line 20, ../precompiled/overlay.scss */
+  .overlay:not(.fullscreen) {
+    overflow-y: auto; }
+  /* line 24, ../precompiled/overlay.scss */
+  .overlay .popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0.95;
+    background-color: #eff4f7; }
+  /* line 36, ../precompiled/overlay.scss */
+  .overlay .popup-window {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    color: #194867;
+    text-align: center;
+    padding: 101px 60px 80px 60px;
+    max-width: 84vw;
+    box-sizing: border-box;
+    margin: auto 8%;
+    height: 433px; }
+    /* line 48, ../precompiled/overlay.scss */
+    .overlay .popup-window.fullscreen {
+      height: 100vh;
+      margin: 0;
+      max-width: none;
+      padding: 0;
+      width: 100vw; }
+    /* line 56, ../precompiled/overlay.scss */
+    .overlay .popup-window .icon-button {
+      background-color: transparent;
+      border: 0; }
+      /* line 60, ../precompiled/overlay.scss */
+      .overlay .popup-window .icon-button .red-line {
+        width: 32px;
+        height: 6px;
+        background-color: #d64054;
+        margin: 0 auto; }
+      /* line 67, ../precompiled/overlay.scss */
+      .overlay .popup-window .icon-button p {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        text-align: right;
+        color: #d64054;
+        padding-top: 12.3px;
+        text-align: center;
+        text-transform: uppercase; }
+      /* line 80, ../precompiled/overlay.scss */
+      .overlay .popup-window .icon-button.top-right {
+        position: absolute;
+        right: 42px;
+        top: 39px;
+        width: auto;
+        color: black; }
+    /* line 89, ../precompiled/overlay.scss */
+    .overlay .popup-window .popup-heading {
+      font-size: 1.563rem;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: bold; }
+    /* line 98, ../precompiled/overlay.scss */
+    .overlay .popup-window .popup-text {
+      font-family: 'Arvo', serif;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      text-align: center;
+      margin: 31px 0 54px 0; }
+    /* line 108, ../precompiled/overlay.scss */
+    .overlay .popup-window .red-button-container.fullscreen {
+      background: #dfe9ef;
+      height: 17.5%;
+      position: absolute;
+      top: 82.5%;
+      width: 100%; }
+    /* line 116, ../precompiled/overlay.scss */
+    .overlay .popup-window .red-button-container .red-button {
+      width: 170px;
+      height: 60px;
+      border: none; }
+      /* line 121, ../precompiled/overlay.scss */
+      .overlay .popup-window .red-button-container .red-button .text {
+        color: white;
+        font-weight: bold;
+        font-size: 1.125rem;
+        text-transform: capitalize; }
+
+@media (max-width: 767px) {
+  /* line 133, ../precompiled/overlay.scss */
+  #external-link-popup .popup-window {
+    padding: 101px 20px 80px 20px; }
+    /* line 136, ../precompiled/overlay.scss */
+    #external-link-popup .popup-window .popup-heading {
+      font-size: 1.25rem; }
+    /* line 140, ../precompiled/overlay.scss */
+    #external-link-popup .popup-window .popup-text {
+      margin: 31px 0;
+      font-size: 1.125rem; } }
+@media (max-height: 650px) {
+  /* line 148, ../precompiled/overlay.scss */
+  #external-link-popup {
+    -ms-flex-align: start;
+    -webkit-box-align: flex-start;
+    -moz-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start; } }

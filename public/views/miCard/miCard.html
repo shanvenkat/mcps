@@ -1,0 +1,85 @@
+<link rel="stylesheet" type="text/css" href="views/miCard/miCard.css">
+
+<div class="card">
+    <div class="card-header card-bold">
+        {{ oCard.majorBranch }}
+    </div>
+
+    <div class="name" ng-if="oCard.name">
+      {{ oCard.name }}
+    </div>
+    <div class="divider" ng-if="!oCard.name"></div>
+
+    <div class="card-body">
+        <div class="card-item card-bold" ng-if="oCard.category">
+          {{ oCard.category }}
+        </div>
+
+        <div class="card-item">
+            <div>{{ oCard.addressline1 }},</div>
+            <div ng-if="oCard.addressline2">{{ oCard.addressline2 }}</div>
+            <div ng-if="oCard.primaryContact.address.zip5">{{ oCard.primaryContact.address.city }},
+                 {{ oCard.primaryContact.address.stateId.stateAbbr }},
+                 {{ oCard.primaryContact.address.zip5 }}
+            </div>
+        </div>
+
+        <div class="card-item card-bold" ng-if="oCard.phoneOffice">
+          <div class="card-icon telephone"></div>
+          {{ oCard.phoneOffice }}
+        </div>
+
+        <div class="card-item card-bold" ng-if="oCard.phoneOfficeDsn">
+          <div class="card-icon telephoneDsn"></div>
+          {{ oCard.phoneOfficeDsn }}
+        </div>
+
+        <div class="card-item card-bold" ng-if="oCard.phoneFax">
+          <div class="card-icon fax"></div>
+          {{ oCard.phoneFax }}
+        </div>
+
+        <div class="card-item card-bold" ng-if="oCard.phoneFaxDsn">
+          <div class="card-icon faxDsn"></div>
+          {{ oCard.phoneFaxDsn }}
+        </div>
+
+        <div class="card-item card-bold" ng-if="oCard.email">
+          <div class="card-icon email"></div>
+          {{ oCard.email }}
+        </div>
+
+        <div class="card-item schedule" ng-if="oCard.scheduleWeekdays">
+          <div class="schedule-item">
+            <div class="schedule-label">
+              Mon - Fri:
+            </div>
+            <div class="schedule-value">
+              {{ oCard.scheduleWeekdays }}
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-label">
+              Sat & Sun:
+            </div>
+            <div class="schedule-value">
+              {{ oCard.scheduleWeekends }}
+            </div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-label">
+              Holidays:
+            </div>
+            <div class="schedule-value">
+              {{ oCard.scheduleHolidays }}
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="card-item">
+            <div class="map" url="{{oCard.map}}">MAP</div>
+            <div class="website pull-right" url="{{oCard.website}}">WEBSITE</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,585 @@
+html, body, .page {
+  background-color: #F0F1F6;
+  font-family: 'Work Sans', sans-serif;
+  height: 100%;
+  min-width: 100%;
+}
+
+ng-view, [ng-view] {
+    height: 100%;
+}
+
+ng-include, [ng-include] {
+  display: block;
+}
+
+@font-face {
+    font-family: BigJohn;
+    src: url("/fonts/BigJohn.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url("/fonts/Avenir.otf") format("opentype");
+}
+
+body .page a,
+body .overlay a{
+  text-decoration: none;
+}
+
+a.link,
+.link {
+  border-bottom: solid transparent 2px;
+  color: #194867;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus,
+a.link:hover,
+a.link:focus {
+  border-bottom: solid #d64054 2px;
+  text-decoration: none;
+}
+
+.link.light {
+  color: white;
+  font-weight: normal;
+}
+
+.link.light:hover {
+  font-weight: bold;
+}
+
+.search-background {
+  background: transparent url("../images/hero-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* begin tags style */
+
+.filter-tags-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.filter-tags-container .tag {
+  background-color: #ffffff;
+  border-radius: 100px;
+  border: solid 2px #e8ebf7;
+  color: #194867;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin-top: 25px;
+  padding: 3px 10px 0px 10px; /* 5px 10px; */
+}
+
+.filter-tags-container .tag:hover {
+    color: #b82132;
+}
+
+.filter-tags-container .tag:after {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="#B92131" fill-rule="evenodd" d="M10 1.007L6.007 5 10 8.993 8.993 10 5 6.007 1.007 10 0 8.993 3.993 5 0 1.007 1.007 0 5 3.993 8.993 0z"/></svg>');
+    content: "";
+    display: inline-block;
+    height: 10px;
+    margin-left: 15px;
+    width: 10px;
+}
+
+.filled-button.blue-pill-large {
+    right: 8vw;
+    position: absolute;
+    height: 34%;
+    top: 34%;
+    width: 10%;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    background: rgba(18, 51, 74, .87);
+    border: 0;
+}
+
+.filled-button.blue-pill-large:hover {
+    background: rgba(18, 51, 74, .7);
+}
+
+.tags-outside-overlay {
+  border-bottom: 3px solid #eaedf9;
+  margin-bottom: 3%;
+  margin-left: 15px;
+  padding-bottom: 2%;
+}
+
+.tags-outside-overlay .subheader {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #12334a;
+}
+
+/* end tags style */
+
+/* non-main view common tasks */
+.input-band {
+  background: white;
+  box-shadow: 0 7px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+.input-band .row {
+  padding: 4% 8%;
+}
+
+.view-header {
+  color: #194867;
+  font-size: 32px;
+  font-weight: bold;
+  width: 100%;
+  padding: 4% 8%;
+  padding-top: 175px;
+  background: transparent url("/images/pentagon-header.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.view-title {
+  display: inline-block;
+}
+
+.view-super-title {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.view-body {
+  background-color: #f8f9fd;
+}
+
+/* common input style, esp for typeaheads */
+.component-root input.input {
+    background: #fff url("/images/select-edge.png") 100% no-repeat;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.2);
+    color: #194867;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 500;
+    outline: 0;
+    padding-left: 45px;
+    width: 100%;
+}
+
+.component-root input.input.white {
+    background: white;
+}
+
+.component-root .input-band input.input,
+.component-root .input-band .input {
+    border-radius: 100px;
+    background-color: #eff4f7;
+    height: 50px;
+    font-size: 16px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.component-root .input-band input.input span.selected,
+.component-root .input-band .input span.selected {
+    display: block;
+    margin: -10px -10px;
+}
+
+.component-root .app-icon {
+    padding: 5px 10px;
+    background: url(/images/radial-icon-container-right.svg);
+    position: absolute;
+    top: calc(50% - 25px);
+    right: 15px;
+    cursor: pointer;
+    height: 50px;
+    width: 52px;
+}
+
+.component-root .app-icon .material-icons {
+    margin-top: 25%;
+}
+
+.component-root input.input::-webkit-input-placeholder,
+.component-root input.input :-moz-placeholder,
+.component-root input.input :-ms-input-placeholder {
+    color: #194867 !important;
+}
+
+[uib-dropdown-menu].dropdown-menu,
+.uib-dropdown-group,
+.wrap-dd-select {
+    background: url("/images/select-edge.png") 100% no-repeat;
+    background-color: #ffffff;
+    height: 80px;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #194867;
+    padding-left: 45px;
+    padding-top: 26px;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+body.uib-dropdown-open [uib-dropdown-menu].dropdown-menu,
+.wrap-dd-select .dropdown {
+    position: absolute;
+    left: 15px;
+    right: 98px;
+    z-index: 10;
+    margin-top: 26px;
+    height: auto;
+    background: #fff;
+    list-style: none;
+    padding-left: 0;
+    color: #13354d;
+}
+
+body.uib-dropdown-open [uib-dropdown-menu].dropdown-menu {
+    margin-top: -1px;
+    margin-left: 1px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.wrap-dd-select .dropdown {
+    visibility: hidden;
+}
+
+.input-band .wrap-dd-select .dropdown,
+.input-band .typeahead .dropdown-menu {
+    right: initial;
+}
+
+[uib-dropdown-menu].dropdown-menu li a,
+.wrap-dd-select .dropdown li a {
+    display: block;
+    padding: 15px 15px 15px 24px;
+    text-decoration: none;
+    color: #12334a;
+}
+
+/* [aria-expanded=true] is a workaround for a bug in uib-typeahead
+ * the bug is that .digest and .apply don't work when transcluded (eg in a directive)
+ * if there is a serious need for more functionality then refer
+ * to proposed fixes on GitHub which condionally modify scope:
+ * https://github.com/angular-ui/bootstrap/issues/5467
+ * https://github.com/angular-ui/bootstrap/issues/6060
+ * https://github.com/angular-ui/bootstrap/pull/5588/files
+ */
+.component-root input.input[aria-expanded=true],
+.component-root [uib-dropdown][aria-expanded=true],
+.typeahead .dropdown-menu li.active,
+.wrap-dd-select.active {
+    border-bottom-left-radius: 0;
+}
+
+.uib-dropdown-group:after,
+.wrap-dd-select:after {
+    font-family: 'Material Icons';
+    font-size: 3.5rem;
+    color: #194867;
+    content: "\E313";
+    position: absolute;
+    top: calc(40% - 15px);
+}
+
+.uib-dropdown-group:after {
+    right: 25px;
+}
+
+.wrap-dd-select:after {
+    right: 40px;
+}
+
+.input-band .wrap-dd-select:after {
+    background: url(/images/radial-icon-container-right.svg) 100%;
+    right: 15px;
+    top: calc(40% - 20px);
+    width: 52px;
+}
+
+[uib-dropdown-menu].dropdown-menu li,
+.typeahead .dropdown-menu > li,
+.wrap-dd-select .dropdown li {
+    height: 60px;
+    border-top: #eaedf9 2px solid;
+    cursor: pointer;
+}
+
+[uib-dropdown-menu].dropdown-menu li:hover a,
+.wrap-dd-select .dropdown li:hover a {
+    background: #12334a;
+    color: #fff;
+    padding: 15px 15px 15px 24px;
+}
+
+.wrap-dd-select.active .dropdown {
+    visibility: visible;
+}
+
+.typeahead input.active {
+    border-bottom-left-radius: 0;
+}
+
+.typeahead .dropdown-menu {
+    right: 97px;
+    border: 0;
+    margin-top: -1px;
+    font-size: 20px;
+    padding: 0;
+}
+
+.typeahead .dropdown-menu > li > a {
+    color: #12334a;
+    font-weight: 500;
+    padding: 15px 15px 15px 24px;
+}
+
+.typeahead .dropdown-menu > .active > a,
+.typeahead .dropdown-menu > .active > a:focus,
+.typeahead .dropdown-menu > .active > a:hover,
+.typeahead .dropdown-menu li:hover a {
+    height: 60px;
+    background: #12334a;
+    color: #fff;
+    padding: 15px 15px 15px 24px;
+}
+
+.back-link {
+    color: #194867;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.back-arrow {
+    font-size: 20px;
+    padding-right: 10px;
+    vertical-align: -2px;
+}
+
+.back-arrow,
+.back-text {
+  cursor: pointer;
+}
+
+.section-header {
+    color: #194867;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-header:not(.no-bar):before {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    background: #d64054;
+    margin-right: 15px;
+    width: 64px;
+    margin-bottom: 5px;
+}
+
+.overlay .popup-window .icon-button.top-right {
+    top: 25px
+}
+
+.overlay .popup-window .popup-heading {
+    align-items: center;
+    display: flex;
+    margin: 5% 7.5%;
+    border-bottom: 3px solid #dde4e8;
+    padding-bottom: 2%;
+}
+
+.overlay .popup-window .popup-heading.section-header {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.overlay .popup-window.fullscreen .popup-text {
+    height: 80%;
+    font-family: 'Work Sans', sans-serif;
+    overflow: scroll;
+    padding: 0% 7.5vw;
+    text-align: left;
+}
+
+.installation-subheader {
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: -0.2px;
+    color: #12334a;
+}
+
+.installation-subheader.bold {
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: 0px;
+}
+
+.left-section-header {
+    color: #12334a;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.left-section-header:before {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    background: #d64054;
+    margin-right: 20px;
+    width: 30px;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.float-none {
+    float: none;
+}
+
+body .page .padding-0,
+.padding-0 {
+    padding: 0;
+}
+
+.ion-android-search,
+.ion-checkmark {
+    display: inline-block;
+    position: absolute;
+    background-color: transparent;
+    color: #194867; /** this is the color for most cases **/
+    font-size: 30px;
+    height: 100%;
+    width: 65px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: 0;
+}
+
+.ion-android-search:before,
+.ion-checkmark:before {
+    top: calc(50% - 12px);
+    right: calc(80% - 5px);
+    position: absolute;
+}
+
+.tag-container .tag-name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  width: 100%;
+}
+
+.tag-container.checked .tag-name:after {
+  background-color: RGB(212,62,81);
+}
+
+.tag-container .tag-name:after {
+  background-color: white;
+  border: solid 2px white;
+  content: "";
+  display: inline-block;
+  float: right;
+  height: 18px;
+  outline: 1px solid #b2bcc3;
+  padding: 2px;
+  width: 18px;
+}
+
+.tag-container input {
+    float: right;
+}
+
+.tag-container {
+    border-bottom: 1px solid #eaedf9;
+    cursor: pointer;
+    height: 5vh;
+    margin-right: 2%;
+    margin-top: 5vh;
+}
+
+.tag-container:hover {
+    color: #b82132;
+}
+
+.divider {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #dde4e8;
+}
+
+.installation-text {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 3.5;
+}
+
+[uib-accordion-header] {
+    line-height: 3.5;
+    font-weight: 600;
+}
+
+.installation-header-margin {
+    margin-top: 50px;
+}
+
+body .page .panel {
+  background: none;
+  box-shadow: none;
+}
+
+body .page .panel-heading,
+body .overlay .panel-heading{
+  display: inline-block;
+  min-width: 20%;
+  padding: 0 15px;
+}
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse> .installations-in-region.panel-body {
+  border: none;
+}
+
+[uib-accordion-group].panel {
+    box-shadow: none;
+}
+
+.open-indicator {
+  background: red;
+  content: "";
+  display: inline-block;
+  height: 6px;
+  background-color: #d64054;
+}
+
+.panel-open .open-indicator {
+  margin-left: 20px;
+}

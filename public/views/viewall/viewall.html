@@ -1,0 +1,76 @@
+<!-- branch filter overlay body -->
+<script type="text/ng-template" id="branch-filter-overlay-body">
+  <div class="left-section-header float-none">BRANCHES OF SERVICE</div>
+
+  <div class="branches-filtered-by-tags">
+    <div class="subheader">FILTERED BY</div>
+    <!-- TODO: make filter-tags-container a directive bc it's repeated -->
+    <div class="filter-tags-container"
+         ng-model="arroBranches[$index].bActiveFilter"
+         ng-repeat="oBranch in arroBranches track by $index"
+         ng-show="oBranch.bActiveFilter === true;"
+         >
+      <div class="tag" ng-click="oBranch.bActiveFilter = false">
+        {{oBranch.sName}}
+      </div>
+    </div>
+  </div>
+
+  <div class="branches-filters container-fluid">                <!-- TODO: make this a directive, also used by installations overlay, and maybe include the filtered tags thing -->
+    <div class="col-md-3 col-xs-12 tag-container display-inline-block"
+         ng-class="{'checked': arroBranches[$index].bActiveFilter}"
+         ng-click="arroBranches[$index].bActiveFilter = !arroBranches[$index].bActiveFilter"
+         ng-repeat="oBranch in arroBranches track by $index">
+        <div class="tag-name">{{oBranch.sName}}</div>
+    </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="view-header-viewall">
+    <div class="search-for-installation" ng-click="fNavToMainView()">
+      <a class="link">SEARCH FOR AN INSTALLATION</a>
+</script>
+<!-- /id="view-header-viewall" -->
+
+<script type="text/ng-template" id="input-band-viewall">
+    <div class="row">
+      <span ng-repeat="sTextItem in arrsConusToggleOptions"
+            ng-class="{
+                        'selected': $index == iSelectedIndexConus,
+                        'toggle-option': true
+                       }"
+            ng-click="fConusToggleClicked($index)">
+        {{ sTextItem }}
+      </span>
+
+      <div class="branch-of-service" ng-click="fShowBranchFilterOverlay()">
+        <span class="text">Choose a Branch of Service</span>
+        <div class="app-icon branch-icon-container">
+          <i class="material-icons" title="Choose branch of service">&#xE5C3;</i>
+        </div>
+      </div>
+    </div>
+</script>
+<!-- /id="input-band-viewall" -->
+
+<script type="text/ng-template" id="view-body-viewall">
+  <div class="installations-container">
+    <div class="arvo">Looking for a U.S. Department of State location? <a class="red" href="https://travel.state.gov/content/travel/en.html">Click here</a> for assistance.</div>
+
+    <div class="tags-outside-overlay" ng-show="fAnyBranchFiltered()">
+      <div class="subheader">SHOWING FILTERED RESULTS BY</div>
+
+      <div class="filter-tags-container"
+           ng-model="arroBranches[$index].bActiveFilter"
+           ng-repeat="oBranch in arroBranches track by $index"
+           ng-show="oBranch.bActiveFilter === true;"
+           >
+        <div class="tag" ng-click="oBranch.bActiveFilter = false">
+          {{oBranch.sName}}
+        </div>
+      </div>
+    </div>
+    <mi-region-accordions arrdirectiveregions="arroRegions"></mi-region-accordions>
+  </div>
+</script>
+<!-- /id="view-body-viewall" -->

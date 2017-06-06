@@ -1,0 +1,255 @@
+.page {
+    height: auto;
+}
+
+/** view header **/
+.milinstall .header {
+    color: #194867;
+    font-weight: bold;
+    width: 100%;
+    padding: 9% 8% 5%;
+    background: transparent url("/images/mi-header.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.milinstall .title {
+    font-size: 32px;
+    padding-top: 12px;
+    line-height: 1.25;
+}
+
+/** weather **/
+.milinstall .weather {
+    font-size: 32px;
+    background-color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    width: 170px;
+    padding-top: 12px;
+    padding-bottom: 7px;
+    line-height: 1.25;
+    box-shadow: 0 7px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+.milinstall .weather > span > sup {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.milinstall .weather > img {
+    margin-right: 23px;
+}
+
+.milinstall .content {
+    background-color: #f8f9fd;
+    padding: 4% 8% 7% 8%;
+}
+
+/* common with categories view */
+.milinstall .card {
+    background-color: #ffffff;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    clear: left;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.milinstall .card-header {
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: 0.3px;
+    color: #194867;
+}
+
+.milinstall .nav-link {
+    color: #b92131;
+}
+
+.milinstall .section {
+    margin-top: 30px;
+}
+
+.milinstall .section .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #194867;
+    margin-bottom: 20px;
+}
+
+.milinstall .section .section-text {
+    font-family: Arvo;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4a4a4a;
+}
+
+/** essentials **/
+.milinstall .essentials {
+    background-color: #f8f9fd;
+    box-shadow: inset 0 0 60px 0 rgba(18, 51, 74, 0.12);
+    padding: 7% 8% 7% 8%;
+}
+
+.milinstall .essentials-card-wrapper {
+    margin-top: 55px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.milinstall .essentials-card {
+    background-color: #fff;
+    height: 350px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    transition: all 400ms ease;
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+    margin-bottom: 30px;
+}
+
+.milinstall .essentials-card.spacer {
+    margin-right: 30px;
+}
+
+.milinstall .essentials-card .essential-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #194867;
+    transition: all 400ms ease;
+}
+
+.milinstall .essentials-card .blue-overlay {
+    background: rgba(0, 140, 234, 0.3);
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 100px;
+    z-index: 1;
+    transition: all 400ms ease;
+}
+
+.milinstall .essentials-card .image-wrapper {
+    height: 100px;
+    margin-bottom: 20px;
+    background: url("/views/milinstall/images/essentials-emergency.png") no-repeat 50%;
+    background-size: cover;
+}
+
+.milinstall .essentials-card .scale {
+    filter: grayscale(100%);
+    transition: all 400ms ease;
+}
+
+.milinstall .essentials-card .essential-content {
+    font-family: Arvo;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.milinstall .essentials-card .oval {
+    background-color: rgba(25, 72, 103, 0.1);
+    height: 98px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-align: center;
+    color: #194867;
+    border-radius: 92px 92px 0 0;
+    padding-top: 49px;
+    transition: all 400ms ease;
+    width: 165px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.milinstall .essentials-card:hover {
+    transition: all 400ms ease;
+    background-color: #194867;
+}
+
+.milinstall .essentials-card:hover .essential-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.milinstall .essentials-card:hover .scale {
+    filter: grayscale(0);
+}
+
+.milinstall .essentials-card:hover .blue-overlay {
+    opacity: 0;
+}
+
+.milinstall .essentials-card:hover .image-wrapper {
+    height: 90px;
+}
+
+.milinstall .essentials-card:hover .oval {
+    color: #fff;
+    margin-top: 50px;
+}
+
+.milinstall .learn-more {
+    font-family: Arvo;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #194867;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.milinstall .categories {
+    padding: 7% 9% 3% 8%;
+    background-color: #ffffff;
+}
+
+.milinstall .categories-wrapper {
+    margin-top: 50px;
+}
+
+.milinstall .category {
+    margin-bottom: 50px;
+}
+
+.milinstall .category-image {
+    margin-right: 30px;
+}
+
+.milinstall .category-content {
+    width: 70%;
+}
+
+.milinstall .category-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #194867;
+}
+
+.milinstall .category-text {
+    font-family: Arvo;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #194867;
+}
+
+.milinstall .category-link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.71;
+    color: #b92131;
+    cursor: pointer;
+}
+
+
+
+
+
+
+

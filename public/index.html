@@ -1,44 +1,212 @@
 <!doctype html>
 <html ng-app="myapp">
-  <head>
-   <script src="/javascripts/jquery/jquery-3.2.0.js"></script>
-   <script src="/javascripts/angular-1.6.0/angular.min.js"></script>
-    <script src="/javascripts/angular-1.6.0/angular-route.js"></script>
-    <script src="/javascripts/angular-1.6.0/angular-resource.js"></script>
-    <script src="/javascripts/angular-1.6.0/angular-sanitize.min.js"></script>
-    <script src="/javascripts/angular-1.6.0/angularjs-dropdown-multiselect.min.js"></script>
-    <script src="/javascripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <script src="/javascripts/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/javascripts/bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-    crossorigin="anonymous">
-   </head>    
-  <body>  
- 
-  <form class="form-horizontal">
-    <div id="page">   
-              
-        <section id="body" class="container">
-                <div ng-view=""></div>
-        </section>  
-        <hr class=""/>    
-        
-            <footer class="container">
-                <p> </p>
-                <p> </p>
-            </footer>    
-        
-    </div>
-    </form>
-    <script src="app/app.js"></script>
-    <script src="app/controllers/MyController.js"></script>
-    <script src="app/services/MyServices.js"></script>
-    <script src="app/filters/PersonFilter.js"></script>   
-     
-    <!--<link rel="stylesheet" type="text/css" href="stylesheets/main.css">-->
-    
-      <link rel="stylesheet" type="text/css" href="stylesheets/misearch.css"> 
-    
-    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>               <!-- override intranet compatability mode -->
 
-  </body>
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/compiled/overlay.css">
+
+    <!-- vendor styles -->
+    <!-- TODO: download and serve them locally (offline support and security reasons) -->
+    <link rel="stylesheet" href="/javascripts/bootstrap-3.3.7/bootstrap.min.css" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Arvo:400,400i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div ng-include="headerTemplateUrl"></div>
+<div class="page">
+    <div ng-view data-autoscroll></div>
+</div>
+<div ng-include="'views/footer/footer.html'"></div>
+
+<!-- loading scripts at the end of the body, order matters -->
+<script src="/javascripts/jquery-3.2.0.js"></script>
+
+<script src="/javascripts/angular-1.6.0/angular.min.js"></script>
+<script src="/javascripts/angular-1.6.0/angular-route.min.js"></script>
+<script src="/javascripts/angular-1.6.0/angular-resource.min.js"></script>
+<script src="/javascripts/angular-1.6.0/angular-sanitize.min.js"></script>
+<script src="/javascripts/angular-1.6.0/angular-animate.min.js"></script>
+
+<script src="/javascripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="/javascripts/bootstrap-3.3.7/bootstrap.min.js"></script>
+
+<!-- unofficial ng extensions and plugins -->
+<script src="/javascripts/angular-dropdowns.js"></script>
+<script src="javascripts/angular-css-injector.js"></script>
+
+<!-- polyfills -->
+<script src="javascripts/polyfill-promise.js"></script>
+<script src="javascripts/polyfill-fetch.js"></script>
+
+<!-- application logic; not libs -->
+<!-- if scrips get too many we can implement lazy load with require or ocLazyLoader -->
+<!-- ref: https://stackoverflow.com/questions/23656231/angularjs-dynamic-loading-of-external-js-based-on-routes -->
+<script src="app/app.js"></script>
+<script src="views/main/main.js"></script>
+
+<script src="views/overlay/overlay.js"></script>
+
+<script src="views/categories/categories.js"></script>
+<script src="views/milinstall/milinstall.js"></script>
+<script src="views/main/program-search.js"></script>
+<script src="views/search/search.js"></script>
+<script src="views/viewall/viewall.js"></script>
+
+<!-- PMM dependencies -->
+<script src="views/planmymove/planmymove.js"></script>
+
+<!-- TODO: remove below scripts -->
+<script type="text/ng-template" id="looking-for">
+  <div class="row space-between">
+      <div class="col-md-3 col-sm-12 col-xs-12 search-text">
+          I'm looking for a
+      </div>
+      <div class="col-md-9 col-sm-12 col-xs-12">
+          <div dropdown-select="oLookingForOptions"
+               dropdown-model="oLookingForSelection"
+               dropdown-item-label="type">
+          </div>
+      </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="typeahead-programs">
+  <div class="typeahead">
+    <input class="input"
+           id='programs'
+           name='programs'
+           ng-model='MI.State.sProgramSelected'
+           placeholder="Choose programs or services"
+           type="text"
+           uib-typeahead="program for program in arrsProgramNames | filter:$viewValue | limitTo:4"
+           >
+
+    <div class="app-icon">
+        <i class="material-icons" title="Choose programs or services"
+           ng-click="fNavToPrgrams()">&#xE5C3;
+        </i>
+    </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="typeahead-installations">
+  <div class="typeahead">
+    <input class="input"
+           id='installations-dropdown'
+           name='installations-dropdown'
+           ng-class="{ 'active': isInstallationOptionListOpen }"
+           ng-model='MI.State.sInstallationSelected'
+           placeholder="Installation name"
+           type="text"
+           typeahead-is-open="isInstallationOptionListOpen"
+           uib-typeahead="sName for sName in arrsInstallationNames | filter:$viewValue | limitTo:4"
+           >
+
+    <div class="app-icon"
+         ng-click="fShowInstallationsOverlay()">
+        <i class="material-icons" title="Installation name">&#xE5C3;</i>
+    </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="installations-overlay">
+    <div class="installation-subheader">
+        <div class="installation-subheader bold">Select your new installation.</div>
+        <div>Filter by branch of service or location to browse for your new installation. If you cannot find your new installation listed here, select either the closest or an installation from the same state or country.</div>
+    </div>
+
+    <div class="container-fluid padding-0">
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <div class="installation-header-margin left-section-header float-none">FILTER BY LOCATION</div>
+                <div class="divider"></div>
+
+                <div class="wrapper">
+                    <div class="tag-container"
+                         ng-class="{'checked': arroConus[$index].bActiveFilter}"
+                         ng-click="arroConus[$index].bActiveFilter = !arroConus[$index].bActiveFilter"
+                         ng-repeat="oConus in arroConus track by $index">
+                        <div class="tag-name">{{oConus.sName}}</div>
+                    </div>
+                </div>
+
+                <div class="installation-header-margin left-section-header float-none">FILTER BY BRANCHES OF SERVICE</div>
+                <div class="divider"></div>
+
+                <div class="wrapper">
+                    <div class="tag-container"
+                         ng-class="{'checked': arroBranches[$index].bActiveFilter}"
+                         ng-click="arroBranches[$index].bActiveFilter = !arroBranches[$index].bActiveFilter"
+                         ng-repeat="oBranch in arroBranches track by $index">
+                        <div class="tag-name">{{oBranch.sName}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- if you don't include a wrapper the ng-repeat doesn't work -->
+            <div class="col-md-9 col-xs-6 installations-wrapper">
+                <div ng-if="arroConus[0].bActiveFilter
+                            || !arroConus[0].bActiveFilter && !arroConus[1].bActiveFilter">
+                    <div class="installation-header-margin installation-subheader bold">CONUS / United States</div>
+                    <div class="divider"></div>
+                    <mi-region-accordions arrdirectiveregions="arroStates"></mi-region-accordions>
+                </div>
+
+                <div ng-if="arroConus[1].bActiveFilter
+                            || !arroConus[0].bActiveFilter && !arroConus[1].bActiveFilter">
+                    <div class="installation-header-margin installation-subheader bold">OCONUS / Overseas</div>
+                    <div class="divider"></div>
+                    <mi-region-accordions arrdirectiveregions="arroCountries"></mi-region-accordions>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="region-accordion">
+  <div class="panel-heading">
+    <h4 class="panel-title region-label">
+      <a href tabindex="0"
+         class="accordion-toggle"
+         ng-click="toggleOpen()"
+         uib-accordion-transclude="heading">
+
+            <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+              {{heading}}
+            </span>
+
+      </a>
+    </h4>
+  </div>
+
+  <div class="panel-collapse collapse" uib-collapse="!isOpen">
+    <div class="panel-body installations-in-region" ng-transclude></div>
+  </div>
+</script>
+
+<!-- arrdirectiveregions is directive scope. it is required to be downcase by Angular. -->
+<script type="text/ng-template" id="region-accordions">
+    <uib-accordion close-others="false">
+      <div uib-accordion-group
+           heading="{{oRegion.sName}}"
+           ng-click="fIndicateOpen($event)"
+           ng-repeat="oRegion in arrdirectiveregions"
+           template-url="region-accordion">
+
+        <div class="installation-text"
+             ng-click="fHandleInstallationTextClick(oInstallation)"
+             ng-repeat="oInstallation in oRegion.oInstallations">
+          {{oInstallation.name}}
+        </div>
+        <br>
+      </div>
+    </uib-accordion>
+</script>
+
+</body>
 </html>

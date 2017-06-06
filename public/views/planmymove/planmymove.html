@@ -1,0 +1,100 @@
+<div class="component-root planmymove">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 intro-section">
+                Plan My Move creates a custom checklist for your move, filled with information about the tasks you need
+                to complete and how to complete them. Your checklist is tailored to the unique needs that you or your
+                family have.
+                <div class="sub-intro-section">
+                    Fill out the information below to start building your checklist.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid form-wrapper">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 form-section">
+                Where are you currently stationed?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 typeahead">
+                <!-- https://github.com/angular-ui/bootstrap/issues/3036
+                typeahead-on-select and ng-change required to fire event
+                This will determine select and unselect event for DOM updates-->
+                <input class="input"
+                       ng-class="{ 'active': isCurrentInstallationListOpen }"
+                       ng-model='MI.State.sPmmCurrentInstallation'
+                       placeholder="Type the name of your current installation"
+                       type="text"
+                       uib-typeahead="sName for sName in arrsInstallationNames | selectFirstOnlyFilter:$viewValue | limitTo:4"
+                       typeahead-is-open="isCurrentInstallationListOpen"
+                       typeahead-editable="false"
+                       typeahead-on-select='toggleCurrentStationSelected($model)'
+                       ng-change="toggleCurrentStationSelected($model)"
+                >
+                <i class="ion-android-search" title="Search" ng-hide="isCurrentStationSelected"></i>
+                <i class="ion-checkmark" title="Selected" ng-show="isCurrentStationSelected"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 subsection-link"
+                 ng-click="fShowInstallationsOverlay()">
+                I CAN'T FIND MY CURRENT INSTALLATION
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 form-section">
+                Where are you moving to?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 typeahead">
+                <!-- this is already a directive - if making an extended directive, scope needs to handled -->
+                <input class="input"
+                       ng-class="{ 'active': isNewInstallationListOpen }"
+                       ng-model='MI.State.sPmmNewInstallation'
+                       placeholder="Type the name of your new installation"
+                       type="text"
+                       uib-typeahead="sName for sName in arrsInstallationNames | selectFirstOnlyFilter:$viewValue | limitTo:4"
+                       typeahead-is-open="isNewInstallationListOpen"
+                       typeahead-editable="false"
+                       typeahead-on-select='toggleNewStationSelected($model)'
+                       ng-change="toggleNewStationSelected($model)"
+                >
+                <i class="ion-android-search" title="Search" ng-hide="isNewStationSelected"></i>
+                <i class="ion-checkmark" title="Selected" ng-show="isNewStationSelected"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 subsection-link"
+                 ng-click="fShowInstallationsOverlay(true)">
+                I CAN'T FIND MY NEW INSTALLATION
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 form-section">
+                Who are you?
+            </div>
+            <div class="col-md-12 col-sm-12 member-type">
+                <span>
+                    <input type="radio" id="r1" ng-model="memberType" value="serviceMember"/>
+                    <label for="r1"><span></span>Service Member</label>
+                </span>
+                <span>
+                    <input type="radio" id="r2" ng-model="memberType" value="lovedOne"/>
+                    <label for="r2"><span></span>Loved One</label>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 checklist-section">
+                <div class="checklist-button" ng-class="getActiveCheckListStyle()">
+                    START BUILDING MY CUSTOM CHECKLIST
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

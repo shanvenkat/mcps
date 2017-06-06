@@ -1,0 +1,165 @@
+<!-- TODO: use common.html, similar to categories.html -->
+<link rel="stylesheet" type="text/css" href="views/miCard/miCard.css">
+<div class="component-root milinstall">
+
+    <!-- header section -->
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="back-link"
+                     ng-show="bShowBackLink">
+                    <i class="ion-android-arrow-back back-arrow"
+                       ng-click="MI.$window.history.back()"/>
+                    <span class="back-text"
+                          ng-click="MI.$window.history.back()">BACK</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 col-sm-12 title">
+                {{installData.name}}
+            </div>
+            <div class="col-md-3 col-sm-12 pull-right">
+                <div class="weather pull-right" ng-hide="temperature == null">
+                    <img src="/views/milinstall/images/weather.png">
+                    <span>{{temperature}}<sup>&deg;F</sup></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div class="container-fluid content">
+        <div class="row">
+            <!-- left section -->
+            <div class="col-md-3 col-sm-6">
+                <span class="left-section-header">MAIN CONTACT INFO</span>
+                <div class="card">
+                    <div class="card-header">
+                        BRANCH OF SERVICE
+                    </div>
+                    <div class="divider"></div>
+                    <div class="card-item">
+                        <div>{{installData.primaryContact.address.addressline1}}, </div>
+                        <div>{{installData.primaryContact.address.city}} ,
+                            {{installData.primaryContact.address.stateId.stateAbbr}} ,
+                            {{installData.primaryContact.address.stateId.zip5}} 
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="telephone bold-text">{{installData.primaryContact.phone[0].phoneNum}}</div>
+                    </div>
+                    <div class="card-item">
+                        <div class="fax bold-text">{{installData.primaryContact.phone[1].phoneNum}}</div>
+                    </div>
+                    <div class="card-item">
+                        <div class="email bold-text">{{installData.primaryContact.email}}</div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="card-item">
+                        <div class="map">MAP</div>
+                        <div class="website pull-right">{{installData.primaryContact.website}}</div>
+                    </div>
+                </div>
+
+                <span class="left-section-header">
+                    INSTALLATION PROGRAM & SERVICES DIRECTORY
+                </span>
+                <div class="card">
+                    <div class="card-item-no-padding">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Curabitur vitae lorem auctor, mattis elit.
+                        <a href="" class="nav-link"> Click to learn more.</a>
+                    </div>
+                </div>
+            </div>
+            <!-- right section -->
+            <div class="col-md-9 col-sm-6">
+                <div class="section-header">QUICK OVERVIEW</div>
+                <div class="section" ng-repeat="section in installData.sections">
+                    <div class="section-title">{{section.title}}</div>
+                    <div class="section-text">{{section.text}}</div>
+                </div>
+                <div class="learn-more">
+                    Looking to learn more about Marine Corps Base Quantico?
+                    <span class="nav-link">View the in-depth overview.</span>
+                </div>
+            </div>
+            <!-- right section -->
+        </div>
+    </div>
+
+    <!-- essentials -->
+    <div class="container-fluid essentials">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 section-header">
+                BASE ESSENTIALS
+            </div>
+        </div>
+        <div class="row essentials-card-wrapper">
+            <div class="col-lg-3 col-md-3 col-sm-12 essentials-card spacer">
+                <div class="blue-overlay"></div>
+                <div class="image-wrapper scale"></div>
+                <div class="essential-title">
+                    Check-in Procedures
+                </div>
+                <div class="essential-content">Lorem ipsum dolor sit amet</div>
+                <div class="oval">LEARN MORE</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 essentials-card spacer">
+                <div class="blue-overlay"></div>
+                <div class="image-wrapper scale"></div>
+                <div class="essential-title">
+                    Emergency Assistance
+                </div>
+                <div class="essential-content">Lorem ipsum dolor sit amet</div>
+                <div class="oval">LEARN MORE</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 essentials-card spacer">
+                <div class="blue-overlay"></div>
+                <div class="image-wrapper scale"></div>
+                <div class="essential-title">
+                    Major Units
+                </div>
+                <div class="essential-content">Lorem ipsum dolor sit amet</div>
+                <div class="oval">LEARN MORE</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 essentials-card">
+                <div class="blue-overlay"></div>
+                <div class="image-wrapper scale"></div>
+                <div class="essential-title">
+                    Sponsorship
+                </div>
+                <div class="essential-content">Lorem ipsum dolor sit amet</div>
+                <div class="oval">LEARN MORE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- categories -->
+    <div class="container-fluid categories">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 section-header">
+                CATEGORIES
+            </div>
+        </div>
+
+        <div class="row categories-wrapper">
+            <div class="col-md-4 col-sm-6 category" ng-repeat="category in installData.categories">
+                <div class="pull-left category-image"><img ng-src="{{category.image}}"></div>
+                <div class="pull-right category-content">
+                    <div class="category-title">{{category.title}}</div>
+                    <div class="category-text">{{category.text}}</div>
+                    <div class="category-link"
+                         ng-click="MI.$location.path(MI.$location.path() + '/' + category.link.nav);">
+                        {{category.link.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,128 @@
+[mi-card] {
+  display: inline-block;
+  margin: 15px 0;
+}
+
+.card {
+    box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+}
+
+.card-header,
+.card-body {
+    background-color: #ffffff;
+    clear: left;
+    padding: 20px;
+  /*
+    margin-bottom: 60px;
+  */
+}
+
+.card-body {
+  padding-top: 0;
+}
+
+.card-bold {
+    font-weight: bold;
+    color: #194867;
+}
+
+.card-item {
+    font-family: Arvo;
+    padding-top: 20px;
+    color: #194867;
+}
+
+.card-item-no-padding {
+    font-family: Arvo;
+    color: #194867;
+    line-height: 1.71;
+}
+
+.card-item .bold-text {
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.card-icon {
+    content: "";
+    width: 30px;
+    height: 21px;
+    float: left;
+    margin-right: 14px;
+}
+
+.card-item .map,
+.card-item .website {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1.3px;
+    font-family: "Work Sans";
+    font-weight: bold;
+}
+
+.card-item .telephone:before {
+    content: "";
+    width: 25px;
+    height: 21px;
+    background: url(images/phone.png) no-repeat;
+    float: left;
+    margin-right: 14px;
+}
+
+.card-item .card-icon.telephoneDsn {
+    background: url(images/phone-dsn.svg) no-repeat;
+}
+
+.card-item .fax:before {
+    content: "";
+    width: 25px;
+    height: 21px;
+    background: url(images/fax.png) no-repeat;
+    float: left;
+    margin-right: 14px;
+}
+
+.card-item .card-icon.faxDsn {
+    background: url(images/fax-dsn.svg) no-repeat;
+}
+
+.card-item .email:before {
+    content: "";
+    width: 25px;
+    height: 21px;
+    background: url(images/email.png) no-repeat;
+    float: left;
+    margin-right: 14px;
+}
+
+.card-item .map:before {
+    content: "";
+    width: 25px;
+    height: 21px;
+    background: url(images/map.png) no-repeat;
+    float: left;
+    margin-right: 14px;
+}
+
+.card-item .website:before {
+    content: "";
+    width: 25px;
+    height: 21px;
+    background: url(images/website.png) no-repeat;
+    float: left;
+    margin-right: 14px;
+}
+
+.card .name {
+  background-color: #f0f2fa;
+  color: #194867;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 20px;
+}
+
+.schedule-label,
+.schedule-value {
+  display: inline-block;
+}

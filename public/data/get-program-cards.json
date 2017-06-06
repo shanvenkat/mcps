@@ -1,0 +1,141 @@
+[
+  {
+    "category": "Chapels",
+    "installationName": "Fort Meade",
+    "majorBranch": "Army",
+    "name": "Chaplain Training Chapel",
+    "address1": "Building 9804 Emory Road",
+    "address2": "Fort Meade, MD 20755",
+    "links": [
+      {
+        "type": "email",
+        "title": "EMAIL",
+        "link": "taylorswift@ftmeade.mil"
+      },
+      {
+        "type": "map",
+        "title": "MAP",
+        "link": "https://www.google.com/maps/place/Fort+Meade,+MD"
+      },
+      {
+        "type": "website",
+        "title": "WEBSITE",
+        "link": "http://www.ftmeade.army.mil/"
+      }
+    ],
+    "schedule": [
+      {
+        "name": "weekdays",
+        "time": "7:30a.m. - 4:00p.m."
+      }, {
+        "name": "weekends",
+        "time": "Closed"
+      }, {
+        "name": "holidays",
+        "time": "Closed"
+      }
+    ],
+    "phone": [
+      {
+        "type": "office",
+        "number": "301-677-0306"
+      },
+      {
+        "type": "officedsn",
+        "number": "301-622-0306"
+      },
+      {
+        "type": "fax",
+        "number": "301-677-0418"
+      },
+      {
+        "type": "faxdsn",
+        "number": "301-622-0418"
+      }
+    ]
+  }, {
+    "category": "Beauty/Barber Shops",
+    "installationName": "Eielson AFB",
+    "majorBranch": "Air Force",
+    "name": "Swift's Taylored Hair",
+    "address1": "Building 429 Rocky Road",
+    "address2": "Eielson AFB, AK 99702",
+    "links": [
+      {
+        "type": "email",
+        "title": "EMAIL",
+        "link": "swift@bodyauto.com"
+      },
+      {
+        "type": "map",
+        "title": "MAP",
+        "link": "https://www.google.com/maps?q=swifts+taylored+hair"
+      },
+      {
+        "type": "website",
+        "title": "WEBSITE",
+        "link": "https://www.google.com/#q=swifts+taylored+hair"
+      }
+    ],
+    "schedule": [
+      {
+        "name": "weekdays",
+        "time": "7:30a.m. - 4:00p.m."
+      }, {
+        "name": "weekends",
+        "time": "9:00a.m. - 4:00p.m."
+      }, {
+        "name": "holidays",
+        "time": "Closed"
+      }
+    ],
+    "phone": [
+      {
+        "type": "office",
+        "number": "218-330-8004"
+      }
+    ]
+  }, {
+    "category": "Automotive Services",
+    "installationName": "Fairchild AFB",
+    "majorBranch": "Air Force",
+    "name": "Taylor Toyota",
+    "address1": "Building 421 Red Dirt Road",
+    "address2": "Fairchild AFB, WA 31334",
+    "links": [
+      {
+        "type": "email",
+        "title": "EMAIL",
+        "link": "taylor@taylortoyota.com"
+      },
+      {
+        "type": "map",
+        "title": "MAP",
+        "link": "https://www.google.com/maps?q=taylor+toyota"
+      },
+      {
+        "type": "website",
+        "title": "WEBSITE",
+        "link": "https://www.google.com/#q=taylor+toyota"
+      }
+    ],
+    "schedule": [
+      {
+        "name": "weekdays",
+        "time": "9:00a.m. - 5:00p.m."
+      }, {
+        "name": "weekends",
+        "time": "11:00a.m. - 3:00p.m."
+      }, {
+        "name": "holidays",
+        "time": "Closed"
+      }
+    ],
+    "phone": [
+      {
+        "type": "office",
+        "number": "512-867-5309"
+      }
+    ]
+  }
+]

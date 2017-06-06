@@ -1,0 +1,12 @@
+A note of common sense: You don't litterally have to ask all of these every time.
+Review them to see if asking will help you develop.
+
+1 - What feature(s) does comp capture?
+2 - Are these features parity or enhancements?
+3 - If parity, is there a URL where I can use the legacy implementation?
+4 - Are any of the functional elements already implemented in another repository
+    - Example: The overlay was implemented as external-link-popup in the falcon theme repo
+5 - Ensure form functionality is understood
+    - Example: Do buttons click or toggle? Are selections multiple or single? Etc.
+6 - From a data perspective, is there anything blocking cd3 preparation?
+    - And timeline around actual implementation

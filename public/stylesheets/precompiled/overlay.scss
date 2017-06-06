@@ -1,0 +1,151 @@
+@import "compass";
+@import "falcon-styles/colors";
+@import "falcon-styles/mixins";
+@import "mos4-styles/colors";
+@import "mos4-styles/mixins";
+@import "mos4-styles/backgrounds";
+
+.overlay{
+	@include flex;
+	@include justify-content(center);
+	@include align-items(center);
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3;
+
+    &:not(.fullscreen){
+        overflow-y: auto;
+    }
+
+	.popup-background{
+		@extend .transparent-blue-textured-overlay;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		opacity: 0.95;
+		background-color: $pale-grey-two;
+	}
+
+	.popup-window{
+		position: relative;
+		background-color: white;
+		box-shadow: 0 38px 43px 0 rgba(25, 72, 103, 0.15);
+		color: $light-blue;
+		text-align: center;
+		padding: 101px 60px 80px 60px;
+		max-width: 84vw;
+		box-sizing: border-box;
+		margin: auto 8%;
+		height: 433px;
+
+        &.fullscreen{
+            height: 100vh;
+            margin: 0;
+            max-width: none;
+            padding: 0;
+            width: 100vw;
+        }
+
+		.icon-button{
+			background-color: transparent; 
+			border: 0;
+	
+			.red-line{
+				width: 32px;
+				height: 6px;
+				background-color: $red;
+				margin: 0 auto;
+			}
+	
+			p{ 
+			font-family: 'Work Sans', sans-serif;
+				font-size: 10px;
+				font-weight: bold;
+				font-style: normal;
+				font-stretch: normal;
+				text-align: right;
+				color: $red;
+				padding-top: 12.3px;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			&.top-right{
+				position: absolute;
+				right: 42px;
+				top: 39px;
+				width: auto;
+				color: black;
+			}  
+		}
+
+		.popup-heading{
+			font-size: 1.563rem;
+			line-height: 1.6;
+			letter-spacing: 0.5px;
+			text-align: center;
+			font-family: 'Work Sans', sans-serif;
+			font-weight: bold;
+		}
+
+		.popup-text{
+			font-family: 'Arvo', serif;
+			font-size: 1.25rem;
+			line-height: 1.4;
+			letter-spacing: 0.2px;
+			text-align: center;
+			margin: 31px 0 54px 0;
+		}
+
+        .red-button-container{
+            &.fullscreen{
+                background: rgb(223,233,239);
+                height: 17.5%;
+                position: absolute;
+                top: 82.5%;
+                width: 100%;
+            }
+
+            .red-button{
+                width: 170px;
+                height: 60px;
+                border: none;
+
+                .text{
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1.125rem;
+                    text-transform: capitalize;
+                }
+            }
+        }
+	}
+}
+
+@media (max-width: 767px){
+	#external-link-popup .popup-window{
+		padding: 101px 20px 80px 20px;
+        
+		.popup-heading{
+			font-size: 1.25rem;
+		}
+			
+		.popup-text{
+			margin: 31px 0;
+			font-size: 1.125rem;
+		}
+	}
+}
+
+@media (max-height: 650px){
+	#external-link-popup{
+		@include align-items(flex-start);
+	}
+}

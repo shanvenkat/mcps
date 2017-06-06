@@ -1,0 +1,121 @@
+<script type="text/javascript">
+    function blockSpecialChar(e){
+        var k;
+        document.all ? k = e.keyCode : k = e.which;
+        return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+        }
+
+        
+    $('#zipval').keypress(function (e) {
+    var regex = new RegExp("^[0-9-]+$");
+    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+    if (regex.test(str)) {
+        return true;
+    }
+
+    e.preventDefault();
+    return false;
+});
+
+</script>
+
+
+<div class="component-root main">          <!-- .ng-scope -->
+    <div class="form-wrapper">
+        <div class="container-fluid view-body">
+
+            <div mi-search></div>
+
+            <div class="row space-between" ng-show="oLookingForSelection.type==='Program or service'">
+                <div class="col-md-3 col-sm-12 col-xs-12 search-text">
+                    I'm interested in
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12 typeahead">
+                    <mi-typeahead-programs></mi-typeahead-programs>
+                </div>
+            </div>
+
+            <div class="row space-between" ng-hide="oLookingForSelection.type==='Program or service'">
+                <div class="col-md-12 col-sm-12 col-xs-12 custom-input">
+                    <input class="input" type="text" id="installationText"
+                           title="Installation Text" ng-model="mi.userModel.installation"
+                           data-provide="typeahead" data-source=""
+                           placeholder={{sPlaceholderDesc}}
+                           uib-typeahead="base for base in mibases | filter:$viewValue | limitTo:8">
+                    <i class="ion-android-search" title="Search" ng-click="fNavToMiInstallLanding()"></i>
+                </div>
+            </div>
+
+            <div class="row space-between" ng-show="fShowIdLikeToFilterByRow(MI.Data.sProgramSelected)">
+                <div class="col-md-3 col-sm-12 col-xs-12 search-text">
+                    I'd like to filter by
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div dropdown-select="arroFilterByDefault"
+                         dropdown-model="oFilterBySelected"
+                         dropdown-item-label="type"
+                         ng-click="fRemoveFilterDefault()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row space-between" ng-show="fShowMainRow('Zip code')">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                </div>
+
+                <div class="col-md-3">
+                    <input class="input white" id="zipval" maxlength="5" ng-model="sZipCodeText" type="text">
+                </div>
+                <div class="col-md-2">
+                    <label class="within" type="text">within:</label>
+                </div>
+                <div class="col-md-4">
+                    <!-- TODO: maybe write a directive to make this html prettier -->
+                    <div class="uib-dropdown-group" dropdown-append-to-body ng-bind="oMilesbySelected.type" ng-click="bUibDropdownOpen = !bUibDropdownOpen" uib-dropdown uib-dropdown-toggle>
+                        <div class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-click="fUibItemClick(oMiles)" ng-repeat="oMiles in arroMilesOptions">
+                                <a>{{oMiles.type}}</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row space-between" ng-show="fShowMainRow('Installation')">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12 typeahead">
+                    <mi-typeahead-installations></mi-typeahead-installations>
+                </div>
+            </div>
+
+            <div class="row space-between" ng-show="fShowSearchButton()">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <button ng-class="{
+                                    'red-pill': fMainFieldsFilled(),
+                                    'disabled': !fMainFieldsFilled(),
+                                    'button-background': true
+                                   }"
+                            ng-click="fNavToSearchResults()"
+                            type="submit" value="SEARCH"
+                    >SEARCH
+                    </button>
+                </div>
+            </div>
+
+            <div class="row" ng-show="oLookingForSelection.type === 'Military installation'">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="view-all-installations" ng-click="MI.$location.path('viewall');">
+                        <a class="link">VIEW ALL INSTALLATIONS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

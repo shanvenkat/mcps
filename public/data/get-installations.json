@@ -1,0 +1,79 @@
+[
+  {
+    "installationId": 4810,
+    "name": "Fort Belvoir",
+    "country": "US",
+    "state": "Virginia",
+    "branch": "Army"
+  },
+  {
+    "installationId": 3760,
+    "name": "Fort Bragg",
+    "country": "US",
+    "state": "North Carolina",
+    "branch": "Army"
+  },
+  {
+    "installationId": 2695,
+    "name": "Fort Campbell",
+    "country": "US",
+    "state": "Kentucky",
+    "branch": "Army"
+  },
+  {
+    "installationId": 42,
+    "name": "Fairchild AFB",
+    "country": "US",
+    "state": "Washington",
+    "branch": "Air Force"
+  },
+  {
+    "installationId": 2695,
+    "name": "Eielson AFB",
+    "country": "US",
+    "state": "Alaska",
+    "branch": "Air Force"
+  },
+  {
+    "installationId": 2695,
+    "name": "Defense Distribution Depot San Joaquin",
+    "country": "US",
+    "state": "California",
+    "branch": "Defense Logistics Agency"
+  },
+  {
+    "installationId": 2695,
+    "name": "Commander Fleet Activities Chinhae",
+    "country": "South Korea",
+    "state": null,
+    "branch": "Navy"
+  },
+  {
+    "installationId": 2695,
+    "name": "Ghedi Air Base",
+    "country": "Italy",
+    "state": null,
+    "branch": "Air Force"
+  },
+  {
+    "installationId": 2695,
+    "name": "Marine Corps Air Station Iwakuni",
+    "country": "Japan",
+    "state": null,
+    "branch": "Marine Corps"
+  },
+  {
+    "installationId": 2695,
+    "name": "Naval Base San Diego",
+    "country": "US",
+    "state": "California",
+    "branch": "Navy"
+  },
+  {
+    "installationId": 1234,
+    "name": "Marine Corps Base Quantico",
+    "country": "US",
+    "state": "Virginia",
+    "branch": "Marine Corps"
+  }
+]

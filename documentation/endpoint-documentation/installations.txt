@@ -1,0 +1,37 @@
+Abstract name: installations
+
+Supported Requests
+------------------
+#     Endpoint                             Type
+01    /get-installations                   GET
+02    /new-installation                    POST
+03    /get-installations/{id}              GET
+04    /update-installations/{id}           PUT
+05    /delete-installations/{id}           DELETE
+
+Sample Request and Response Bodies
+01 - Request: no body
+01 - Response:
+{
+  installations: [
+    {
+      "name": "Yoga Studio",
+      "id": 50
+    },{
+      "name": "Burger King",
+      "id": 9001
+    }
+  ]
+}
+
+02 - Request:
+{
+      "name": "Golf Course"
+}
+
+02 - Response:
+{
+  "name": "Golf Course",
+  "id": 9002
+}
+

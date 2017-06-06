@@ -1,0 +1,181 @@
+@mixin appearance($property) {
+  appearance: $property;
+  -webkit-appearance: $property;
+  -moz-appearance: $property;
+}
+
+@mixin backface-visibility($property) {
+  -webkit-backface-visibility: $property;
+  -moz-backface-visibility: $property;
+  -o-backface-visibility: $property;
+  backface-visibility: $property;
+}
+
+@mixin transform-style($property) {
+  transform-style: $property;
+  -webkit-transform-style: $property;
+  -moz-transform-style: $property;
+  -o-transform-style: $property;
+  -ms-transform-style: $property;
+}
+
+@mixin rotateY-transform($degrees) {
+  -webkit-transform: rotateY($degrees);
+  -moz-transform: rotateY($degrees);
+  -o-transform: rotateY($degrees);
+  -ms-transform: rotateY($degrees);
+  transform: rotateY($degrees);
+}
+
+@mixin perspective($px) {
+  -webkit-perspective: $px;
+  -moz-perspective: $px;
+  -o-perspective: $px;
+  -ms-perspective: $px;
+  perspective: $px;
+}
+
+@mixin transform-origin($vertical, $horizontal) {
+  transform-origin: $vertical $horizontal;
+  -webkit-transform-origin: $vertical $horizontal;
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+}
+
+@mixin flex-params($positive, $negative, $preferred) {
+  -webkit-flex: $positive $negative $preferred;
+  -ms-flex: $positive $negative $preferred;
+  flex: $positive $negative $preferred;
+}
+
+@mixin flex-grow($number) {
+  -webkit-flex-grow: $number;
+  -ms-flex-positive: $number;
+  flex-grow: $number;
+}
+
+@mixin inline-flex{
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin justify-content($align){
+  @if $align == 'space-between'{
+    -ms-flex-pack: justify;
+  } @else if $align == 'flex-start'{
+    -ms-flex-pack: start;
+  } @else if $align == 'flex-end'{
+    -ms-flex-pack: end;
+  } @else if $align == 'center' {
+    -ms-flex-pack: center;
+  } @else if $align == 'space-around' {
+    -ms-flex-pack: distribute;
+  }
+  -webkit-box-pack: $align;
+  -moz-box-pack: $align;
+  -webkit-justify-content: $align;
+  justify-content: $align;
+}
+
+@mixin align-items($align){
+  @if $align == 'flex-start'{
+    -ms-flex-align: start;
+  } @else if $align == 'flex-end'{
+    -ms-flex-align: end;
+  } @else if $align == 'center' {
+    -ms-flex-align: center;
+  } @else{
+    -ms-flex-align: $align;
+  }
+
+  -webkit-box-align: $align;
+  -moz-box-align: $align;
+  -ms-flex-align: $align;
+  -webkit-align-items: $align;
+  align-items: $align;
+}
+
+@mixin flex-direction($align){
+  @if $align == 'row' {
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+  }
+  -ms-flex-direction: $align;
+  -webkit-flex-direction: $align;
+  flex-direction: $align;
+}
+
+@mixin flex-wrap($wrap){
+  @if $wrap == 'wrap' {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -ms-flex-wrap: wrap;
+  } @else{
+    -ms-flex-wrap: $wrap;
+    -webkit-flex-wrap: $wrap;
+  }
+  flex-wrap: $wrap;
+}
+
+@mixin transition($property, $duration, $timing){
+  -webkit-transition: $property $duration $timing;
+  -moz-transition: $property $duration $timing;
+  -o-transition: $property $duration $timing;
+  -ms-transition: $property $duration $timing;
+  transition: $property $duration $timing;
+}
+
+@mixin multipleTransitions($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -o-transition: $transitions;
+  -ms-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 1em;
+    background: $bgColor;
+  }
+}
+
+@mixin greyScale(){
+  	  filter: grayscale(100%);
+  	  -moz-filter: grayscale(100%);
+  	  -ms-filter: grayscale(100%); 
+  	  -o-filter: grayscale(100%);
+  	  -webkit-filter: grayscale(1);
+}
+
+@mixin greyScaleOff(){
+	  filter: grayscale(0);
+  	  -moz-filter: grayscale(0);
+  	  -ms-filter: grayscale(0); 
+  	  -o-filter: grayscale(0);
+  	  -webkit-filter: grayscale(0);
+}
